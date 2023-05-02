@@ -71,7 +71,7 @@
 		40D093DA2A01539800FBBB5A /* GetivySDK */ = {
 			isa = PBXGroup;
 			children = (
-				40D093DB2A01539800FBBB5A /* GetivySDK.h */,
+				40D093F72A0185F200FBBB5A /* Source */,
 				40D093DC2A01539800FBBB5A /* GetivySDK.docc */,
 			);
 			path = GetivySDK;
@@ -83,6 +83,14 @@
 				40D093E72A01539800FBBB5A /* GetivySDKTests.swift */,
 			);
 			path = GetivySDKTests;
+			sourceTree = "<group>";
+		};
+		40D093F72A0185F200FBBB5A /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				40D093DB2A01539800FBBB5A /* GetivySDK.h */,
+			);
+			path = Source;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -392,6 +400,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +428,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
