@@ -1,8 +1,8 @@
 reporter: "xcode"
 
 included:
-  - GetivySDK/Sources
-  - GetivySDKTests
+  - Source
+  - Tests
 
 analyzer_rules:
   - typesafe_array_init

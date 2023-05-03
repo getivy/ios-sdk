@@ -5,17 +5,17 @@ let package = Package(
     name: "GetivySDK",
     platforms: [.iOS(.v11)],
     products: [
-        .library(name: "GetivySDK", targets: ["GetivySDK"])
+        .library(name: "GetivySDK", targets: ["GetivySDK"]),
     ],
     targets: [
         .target(
             name: "GetivySDK",
-            path: "GetivySDK/Source"
+            path: "Source"
         ),
         .testTarget(
             name: "GetivySDKTests",
             dependencies: ["GetivySDK"],
-            path: "GetivySDKTests"
-        )
+            path: "Tests"
+        ),
     ]
 )
