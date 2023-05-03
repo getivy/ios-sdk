@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		40D093DD2A01539800FBBB5A /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40D093DC2A01539800FBBB5A /* GetivySDK.docc */; };
+		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
+		40B69DB02A025D5300DA03F4 /* GetivySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B69DAE2A025D5300DA03F4 /* GetivySDK.h */; };
+		40B69DB12A025D5300DA03F4 /* GetivySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */; };
 		40D093E32A01539800FBBB5A /* GetivySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D093D82A01539800FBBB5A /* GetivySDK.framework */; };
-		40D093E82A01539800FBBB5A /* GetivySDKTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D093E72A01539800FBBB5A /* GetivySDKTests.swift */; };
-		40D093E92A01539800FBBB5A /* GetivySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 40D093DB2A01539800FBBB5A /* GetivySDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -24,11 +24,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
+		40B69DAE2A025D5300DA03F4 /* GetivySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetivySDK.h; sourceTree = "<group>"; };
+		40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetivySDK.swift; sourceTree = "<group>"; };
 		40D093D82A01539800FBBB5A /* GetivySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetivySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		40D093DB2A01539800FBBB5A /* GetivySDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GetivySDK.h; sourceTree = "<group>"; };
-		40D093DC2A01539800FBBB5A /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
 		40D093E22A01539800FBBB5A /* GetivySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetivySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		40D093E72A01539800FBBB5A /* GetivySDKTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetivySDKTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,11 +50,28 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		40B69DAD2A025D5300DA03F4 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				40B69DAE2A025D5300DA03F4 /* GetivySDK.h */,
+				40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		40B69DB22A025D5E00DA03F4 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
 		40D093CE2A01539800FBBB5A = {
 			isa = PBXGroup;
 			children = (
-				40D093DA2A01539800FBBB5A /* GetivySDK */,
-				40D093E62A01539800FBBB5A /* GetivySDKTests */,
+				40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */,
+				40B69DAD2A025D5300DA03F4 /* Source */,
+				40B69DB22A025D5E00DA03F4 /* Tests */,
 				40D093D92A01539800FBBB5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,23 +85,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		40D093DA2A01539800FBBB5A /* GetivySDK */ = {
-			isa = PBXGroup;
-			children = (
-				40D093DB2A01539800FBBB5A /* GetivySDK.h */,
-				40D093DC2A01539800FBBB5A /* GetivySDK.docc */,
-			);
-			path = GetivySDK;
-			sourceTree = "<group>";
-		};
-		40D093E62A01539800FBBB5A /* GetivySDKTests */ = {
-			isa = PBXGroup;
-			children = (
-				40D093E72A01539800FBBB5A /* GetivySDKTests.swift */,
-			);
-			path = GetivySDKTests;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -92,7 +92,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D093E92A01539800FBBB5A /* GetivySDK.h in Headers */,
+				40B69DB02A025D5300DA03F4 /* GetivySDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +228,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat >/dev/null; then\n  swiftformat\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -237,7 +237,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D093DD2A01539800FBBB5A /* GetivySDK.docc in Sources */,
+				40B69DB12A025D5300DA03F4 /* GetivySDK.swift in Sources */,
+				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -245,7 +246,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40D093E82A01539800FBBB5A /* GetivySDKTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +392,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -419,6 +420,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -437,6 +439,7 @@
 		40D093F02A01539800FBBB5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -452,6 +455,7 @@
 		40D093F12A01539800FBBB5A /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
