@@ -19,9 +19,9 @@ s.source = { :git => "https://github.com/getivy/ios-sdk.git",
 
 s.framework = "UIKit"
 
-s.source_files = "GetivySDK/Source/**/*.{swift}"
+s.source_files = "Source/**/*.{swift}"
 
-s.resources = "GetivySDK/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
+s.resources = "Source/**/*.{png,jpeg,jpg,storyboard,xib,xcassets}"
 
 s.swift_version = "5.7"
 
