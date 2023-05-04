@@ -10,7 +10,7 @@ public enum Environment: Int {
         switch self {
         case .production:
             assertionFailure("implement")
-            return "https://api.dev.getivy.de"
+            return "https://api.getivy.de"
         case .sandbox:
             assertionFailure("implement")
             return "https://api.sand.getivy.de"
