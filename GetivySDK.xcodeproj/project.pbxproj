@@ -8,9 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
-		40B69DB02A025D5300DA03F4 /* GetivySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 40B69DAE2A025D5300DA03F4 /* GetivySDK.h */; };
-		40B69DB12A025D5300DA03F4 /* GetivySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */; };
 		40D093E32A01539800FBBB5A /* GetivySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D093D82A01539800FBBB5A /* GetivySDK.framework */; };
+		40E876382A03B0770013038E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762B2A03B0770013038E /* APIService.swift */; };
+		40E876392A03B0770013038E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762C2A03B0770013038E /* Environment.swift */; };
+		40E8763A2A03B0770013038E /* GetivySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E8762D2A03B0770013038E /* GetivySDK.h */; };
+		40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762E2A03B0770013038E /* GetivySDK.swift */; };
+		40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762F2A03B0770013038E /* GetivySDKError.swift */; };
+		40E8763D2A03B0770013038E /* GetDataSessionRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876302A03B0770013038E /* GetDataSessionRequest.swift */; };
+		40E8763E2A03B0770013038E /* GetDataSessionResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876312A03B0770013038E /* GetDataSessionResponse.swift */; };
+		40E8763F2A03B0770013038E /* GetDataSessionResponseParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876322A03B0770013038E /* GetDataSessionResponseParser.swift */; };
+		40E876412A03B0770013038E /* DataSessionApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876342A03B0770013038E /* DataSessionApiService.swift */; };
+		40E876422A03B0770013038E /* PresentationUIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876352A03B0770013038E /* PresentationUIHandler.swift */; };
+		40E876432A03B0770013038E /* UIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876362A03B0770013038E /* UIHandler.swift */; };
+		40E876472A03B17A0013038E /* ApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E876462A03B17A0013038E /* ApiContext.swift */; };
+		40E8764B2A03B22C0013038E /* NonPersistentApiContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764A2A03B22C0013038E /* NonPersistentApiContext.swift */; };
+		40E8764D2A03B3480013038E /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764C2A03B3480013038E /* APIRoute.swift */; };
+		40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */; };
+		40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8765B2A03CB450013038E /* DataSessionService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -25,10 +39,24 @@
 
 /* Begin PBXFileReference section */
 		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
-		40B69DAE2A025D5300DA03F4 /* GetivySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetivySDK.h; sourceTree = "<group>"; };
-		40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetivySDK.swift; sourceTree = "<group>"; };
 		40D093D82A01539800FBBB5A /* GetivySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetivySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D093E22A01539800FBBB5A /* GetivySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetivySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E8762B2A03B0770013038E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		40E8762C2A03B0770013038E /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		40E8762D2A03B0770013038E /* GetivySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetivySDK.h; sourceTree = "<group>"; };
+		40E8762E2A03B0770013038E /* GetivySDK.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetivySDK.swift; sourceTree = "<group>"; };
+		40E8762F2A03B0770013038E /* GetivySDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetivySDKError.swift; sourceTree = "<group>"; };
+		40E876302A03B0770013038E /* GetDataSessionRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDataSessionRequest.swift; sourceTree = "<group>"; };
+		40E876312A03B0770013038E /* GetDataSessionResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDataSessionResponse.swift; sourceTree = "<group>"; };
+		40E876322A03B0770013038E /* GetDataSessionResponseParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetDataSessionResponseParser.swift; sourceTree = "<group>"; };
+		40E876342A03B0770013038E /* DataSessionApiService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSessionApiService.swift; sourceTree = "<group>"; };
+		40E876352A03B0770013038E /* PresentationUIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PresentationUIHandler.swift; sourceTree = "<group>"; };
+		40E876362A03B0770013038E /* UIHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIHandler.swift; sourceTree = "<group>"; };
+		40E876462A03B17A0013038E /* ApiContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiContext.swift; sourceTree = "<group>"; };
+		40E8764A2A03B22C0013038E /* NonPersistentApiContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NonPersistentApiContext.swift; sourceTree = "<group>"; };
+		40E8764C2A03B3480013038E /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
+		40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionApiRoute.swift; sourceTree = "<group>"; };
+		40E8765B2A03CB450013038E /* DataSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -50,15 +78,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		40B69DAD2A025D5300DA03F4 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				40B69DAE2A025D5300DA03F4 /* GetivySDK.h */,
-				40B69DAF2A025D5300DA03F4 /* GetivySDK.swift */,
-			);
-			path = Source;
-			sourceTree = "<group>";
-		};
 		40B69DB22A025D5E00DA03F4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -70,7 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */,
-				40B69DAD2A025D5300DA03F4 /* Source */,
+				40E8762A2A03B0770013038E /* Source */,
 				40B69DB22A025D5E00DA03F4 /* Tests */,
 				40D093D92A01539800FBBB5A /* Products */,
 			);
@@ -85,6 +104,101 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		40E8762A2A03B0770013038E /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				40E876562A03BAC60013038E /* UI */,
+				40E876502A03B6250013038E /* Api */,
+				40E8762D2A03B0770013038E /* GetivySDK.h */,
+				40E8762E2A03B0770013038E /* GetivySDK.swift */,
+				40E8762F2A03B0770013038E /* GetivySDKError.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		40E876502A03B6250013038E /* Api */ = {
+			isa = PBXGroup;
+			children = (
+				40E876582A03BAE10013038E /* Contexts */,
+				40E876542A03B6880013038E /* Parsers */,
+				40E876532A03B6750013038E /* Models */,
+				40E876522A03B6530013038E /* Services */,
+				40E876512A03B6410013038E /* Routes */,
+				40E8762C2A03B0770013038E /* Environment.swift */,
+			);
+			path = Api;
+			sourceTree = "<group>";
+		};
+		40E876512A03B6410013038E /* Routes */ = {
+			isa = PBXGroup;
+			children = (
+				40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */,
+				40E8764C2A03B3480013038E /* APIRoute.swift */,
+			);
+			path = Routes;
+			sourceTree = "<group>";
+		};
+		40E876522A03B6530013038E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				40E8765D2A03CC5A0013038E /* DataSession */,
+				40E8762B2A03B0770013038E /* APIService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		40E876532A03B6750013038E /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				40E876302A03B0770013038E /* GetDataSessionRequest.swift */,
+				40E876312A03B0770013038E /* GetDataSessionResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		40E876542A03B6880013038E /* Parsers */ = {
+			isa = PBXGroup;
+			children = (
+				40E876322A03B0770013038E /* GetDataSessionResponseParser.swift */,
+			);
+			path = Parsers;
+			sourceTree = "<group>";
+		};
+		40E876562A03BAC60013038E /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				40E876572A03BACD0013038E /* Handler */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		40E876572A03BACD0013038E /* Handler */ = {
+			isa = PBXGroup;
+			children = (
+				40E876352A03B0770013038E /* PresentationUIHandler.swift */,
+				40E876362A03B0770013038E /* UIHandler.swift */,
+			);
+			path = Handler;
+			sourceTree = "<group>";
+		};
+		40E876582A03BAE10013038E /* Contexts */ = {
+			isa = PBXGroup;
+			children = (
+				40E8764A2A03B22C0013038E /* NonPersistentApiContext.swift */,
+				40E876462A03B17A0013038E /* ApiContext.swift */,
+			);
+			path = Contexts;
+			sourceTree = "<group>";
+		};
+		40E8765D2A03CC5A0013038E /* DataSession */ = {
+			isa = PBXGroup;
+			children = (
+				40E8765B2A03CB450013038E /* DataSessionService.swift */,
+				40E876342A03B0770013038E /* DataSessionApiService.swift */,
+			);
+			path = DataSession;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -92,7 +206,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B69DB02A025D5300DA03F4 /* GetivySDK.h in Headers */,
+				40E8763A2A03B0770013038E /* GetivySDK.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,7 +342,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat >/dev/null; then\n  swiftformat\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
+			shellScript = "if [[ \"$(uname -m)\" == arm64 ]]; then\n    export PATH=\"/opt/homebrew/bin:$PATH\"\nfi\n\nif which swiftformat >/dev/null; then\n  swiftformat .\nelse\n  echo \"warning: SwiftFormat not installed, download from https://github.com/nicklockwood/SwiftFormat\"\nfi\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -237,8 +351,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				40B69DB12A025D5300DA03F4 /* GetivySDK.swift in Sources */,
+				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
+				40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */,
+				40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */,
+				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
+				40E8763E2A03B0770013038E /* GetDataSessionResponse.swift in Sources */,
+				40E8763F2A03B0770013038E /* GetDataSessionResponseParser.swift in Sources */,
+				40E876432A03B0770013038E /* UIHandler.swift in Sources */,
+				40E876422A03B0770013038E /* PresentationUIHandler.swift in Sources */,
+				40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */,
+				40E876472A03B17A0013038E /* ApiContext.swift in Sources */,
+				40E876382A03B0770013038E /* APIService.swift in Sources */,
+				40E8764B2A03B22C0013038E /* NonPersistentApiContext.swift in Sources */,
+				40E8763D2A03B0770013038E /* GetDataSessionRequest.swift in Sources */,
+				40E876392A03B0770013038E /* Environment.swift in Sources */,
 				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,
+				40E876412A03B0770013038E /* DataSessionApiService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
