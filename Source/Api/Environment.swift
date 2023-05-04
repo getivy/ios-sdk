@@ -13,7 +13,7 @@ public enum Environment: Int {
             return "https://api.dev.getivy.de"
         case .sandbox:
             assertionFailure("implement")
-            return "https://api.dev.getivy.de"
+            return "https://api.sand.getivy.de"
         case .development:
             return "https://api.dev.getivy.de"
         }
