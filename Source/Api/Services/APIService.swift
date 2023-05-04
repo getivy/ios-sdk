@@ -36,7 +36,7 @@ class ApiService {
             let jsonData = try JSONEncoder().encode(parameters)
             request.httpBody = jsonData
         } catch {
-            completion(nil, nil, error)
+            completion(nil, nil, GetivySDKError.failedToEncodeGetDataSessionRequest)
             return
         }
         task?.cancel()

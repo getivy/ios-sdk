@@ -8,4 +8,5 @@ public enum GetivySDKError: Error {
     case unexpectedGetDataSessionResponse
     case couldNotConstructFullUrlForEnvironment
     case sessionVerificationFailed
+    case failedToEncodeGetDataSessionRequest
 }
