@@ -18,7 +18,7 @@ public final class GetivySDK: NSObject {
     @objc
     public func initializeHandler(
         id: String,
-        completion: @escaping (PresentationUIHandler?, Error?) -> Void
+        completion: @escaping (UIHandler?, Error?) -> Void
     ) {
         let request = GetDataSessionRequest(id: id)
         api.retrieveDataSession(

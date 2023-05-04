@@ -1,12 +1,12 @@
 import Foundation
 import UIKit
 
-typealias DismissalClosure = (UIViewController) -> Void
+public typealias DismissalClosure = (UIViewController) -> Void
 
-typealias ViewControllerClosure = (UIViewController) -> Void
+public typealias ViewControllerClosure = (UIViewController) -> Void
 
 @objc
-protocol UIHalnder {
+public protocol UIHandler {
     func openUI(
         viewController: UIViewController,
         onSuccess: () -> Void,

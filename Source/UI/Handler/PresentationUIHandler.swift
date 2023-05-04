@@ -1,8 +1,7 @@
 import Foundation
 import UIKit
 
-@objcMembers
-public class PresentationUIHandler: NSObject, UIHalnder {
+class PresentationUIHandler: NSObject, UIHandler {
     func openUI(
         viewController _: UIViewController,
         onSuccess _: () -> Void,
