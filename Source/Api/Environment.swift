@@ -9,10 +9,8 @@ public enum Environment: Int {
     var url: String {
         switch self {
         case .production:
-            assertionFailure("implement")
             return "https://api.getivy.de"
         case .sandbox:
-            assertionFailure("implement")
             return "https://api.sand.getivy.de"
         case .development:
             return "https://api.dev.getivy.de"
