@@ -2,24 +2,27 @@ import Foundation
 
 @objc
 public final class GetivySDK: NSObject {
-    private let api: DataSessionService
-
+    
     @objc
-    public init(environment: Environment) {
-        api = DataSessionApiService(
-            context: NonPersistentApiContext(environment: environment),
-            session: URLSession.shared,
-            parser: GetDataSessionResponseParser()
-        )
+    public static let shared = GetivySDK()
+    
+    private let api = DataSessionApiService(
+        context: NonPersistentApiContext(environment: .production),
+        session: URLSession.shared,
+        parser: GetDataSessionResponseParser()
+    )
 
-        super.init()
-    }
+    private override init() { super.init() }
 
     @objc
     public func initializeHandler(
         id: String,
+        environment: Environment,
         completion: @escaping (UIHandler?, Error?) -> Void
     ) {
+        
+        api.context.environment = environment
+        
         let request = GetDataSessionRequest(id: id)
         api.retrieveDataSession(
             route: DataSessionApiRoute.retrieve,

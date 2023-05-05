@@ -8,7 +8,11 @@ typealias PostResult = (Data?, URLResponse?, Error?) -> Void
 
 class ApiService {
     let session: URLSession
-    let context: ApiContext
+    var context: ApiContext {
+        willSet {
+            cancel()
+        }
+    }
 
     private var task: URLSessionTask?
 
@@ -39,8 +43,12 @@ class ApiService {
             completion(nil, nil, GetivySDKError.failedToEncodeGetDataSessionRequest)
             return
         }
-        task?.cancel()
+        cancel()
         task = session.dataTask(with: request, completionHandler: completion)
         task?.resume()
+    }
+    
+    func cancel() {
+        task?.cancel()
     }
 }
