@@ -16,6 +16,7 @@ final class DataSessionApiService: ApiService, DataSessionService {
     func retrieveDataSession(
         route: ApiRoute,
         params: GetDataSessionRequest,
+        resultQueue: DispatchQueue = .main,
         completion: @escaping RetrieveDataSessionResponse
     ) {
         post(
@@ -23,15 +24,23 @@ final class DataSessionApiService: ApiService, DataSessionService {
             parameters: params
         ) { data, _, _ in
             guard let data else {
-                completion(.failure(GetivySDKError.sessionVerificationFailed))
+                resultQueue.async {
+                    completion(.failure(GetivySDKError.sessionVerificationFailed))
+                }
                 return
             }
 
             do {
                 let decodedResponse = try self.parser.parse(data: data)
-                completion(.success(decodedResponse))
+                resultQueue.async {
+                    completion(.success(decodedResponse))
+                }
+                
             } catch {
-                completion(.failure(error))
+                resultQueue.async {
+                    completion(.failure(error))
+                }
+                
             }
         }
     }
