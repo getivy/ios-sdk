@@ -1,17 +1,11 @@
 import Foundation
 
-public typealias SuccessCallback = () -> Void
-
-public typealias ErrorCallback = () -> Void
-
 @objc
 public final class GetivySDK: NSObject {
     @objc
     public static let shared = GetivySDK()
 
-    var successCallback: SuccessCallback?
-
-    var errorCallback: ErrorCallback?
+    var config: GetivyConfiguration?
 
     private let api: DataSessionApiService
 
@@ -26,17 +20,13 @@ public final class GetivySDK: NSObject {
 
     @objc
     public func initializeHandler(
-        id: String,
-        environment: Environment,
-        onSuccess: @escaping SuccessCallback,
-        onError: @escaping ErrorCallback,
+        configuration: GetivyConfiguration,
         handlerResult: @escaping (UIHandler?, Error?) -> Void
     ) {
-        api.context.environment = environment
-        successCallback = onSuccess
-        errorCallback = onError
+        api.context.environment = configuration.environment
+        config = configuration
 
-        let request = GetDataSessionRequest(id: id)
+        let request = GetDataSessionRequest(id: configuration.dataSessionId)
         api.retrieveDataSession(
             route: DataSessionApiRoute.retrieve,
             params: request
@@ -48,7 +38,7 @@ public final class GetivySDK: NSObject {
 
             case let .failure(error):
                 handlerResult(nil, error)
-                self?.errorCallback?()
+                self?.config?.onError()
             }
         }
     }

@@ -25,6 +25,12 @@
 		40E8764D2A03B3480013038E /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764C2A03B3480013038E /* APIRoute.swift */; };
 		40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */; };
 		40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8765B2A03CB450013038E /* DataSessionService.swift */; };
+		40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E4D2A054E36006A6DAC /* BankViewController.swift */; };
+		40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E512A054E92006A6DAC /* WebViewController.swift */; };
+		40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */; };
+		40F64E562A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E552A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift */; };
+		40F64E582A05524B006A6DAC /* PresentationUIHandler+Build.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E572A05524B006A6DAC /* PresentationUIHandler+Build.swift */; };
+		40F64E5B2A05675C006A6DAC /* GetivyConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E5A2A05675C006A6DAC /* GetivyConfiguration.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +63,12 @@
 		40E8764C2A03B3480013038E /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
 		40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionApiRoute.swift; sourceTree = "<group>"; };
 		40E8765B2A03CB450013038E /* DataSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionService.swift; sourceTree = "<group>"; };
+		40F64E4D2A054E36006A6DAC /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
+		40F64E512A054E92006A6DAC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+Routing.swift"; sourceTree = "<group>"; };
+		40F64E552A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+UIHandler.swift"; sourceTree = "<group>"; };
+		40F64E572A05524B006A6DAC /* PresentationUIHandler+Build.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+Build.swift"; sourceTree = "<group>"; };
+		40F64E5A2A05675C006A6DAC /* GetivyConfiguration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetivyConfiguration.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +119,7 @@
 		40E8762A2A03B0770013038E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				40F64E592A05674B006A6DAC /* Config */,
 				40E876562A03BAC60013038E /* UI */,
 				40E876502A03B6250013038E /* Api */,
 				40E8762D2A03B0770013038E /* GetivySDK.h */,
@@ -167,6 +180,8 @@
 		40E876562A03BAC60013038E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				40F64E502A054E73006A6DAC /* Web */,
+				40F64E4F2A054E3F006A6DAC /* Bank */,
 				40E876572A03BACD0013038E /* Handler */,
 			);
 			path = UI;
@@ -177,6 +192,9 @@
 			children = (
 				40E876352A03B0770013038E /* PresentationUIHandler.swift */,
 				40E876362A03B0770013038E /* UIHandler.swift */,
+				40F64E552A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift */,
+				40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */,
+				40F64E572A05524B006A6DAC /* PresentationUIHandler+Build.swift */,
 			);
 			path = Handler;
 			sourceTree = "<group>";
@@ -197,6 +215,30 @@
 				40E876342A03B0770013038E /* DataSessionApiService.swift */,
 			);
 			path = DataSession;
+			sourceTree = "<group>";
+		};
+		40F64E4F2A054E3F006A6DAC /* Bank */ = {
+			isa = PBXGroup;
+			children = (
+				40F64E4D2A054E36006A6DAC /* BankViewController.swift */,
+			);
+			path = Bank;
+			sourceTree = "<group>";
+		};
+		40F64E502A054E73006A6DAC /* Web */ = {
+			isa = PBXGroup;
+			children = (
+				40F64E512A054E92006A6DAC /* WebViewController.swift */,
+			);
+			path = Web;
+			sourceTree = "<group>";
+		};
+		40F64E592A05674B006A6DAC /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				40F64E5A2A05675C006A6DAC /* GetivyConfiguration.swift */,
+			);
+			path = Config;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -351,7 +393,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
+				40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */,
 				40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */,
 				40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */,
 				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
@@ -360,13 +404,17 @@
 				40E876432A03B0770013038E /* UIHandler.swift in Sources */,
 				40E876422A03B0770013038E /* PresentationUIHandler.swift in Sources */,
 				40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */,
+				40F64E5B2A05675C006A6DAC /* GetivyConfiguration.swift in Sources */,
 				40E876472A03B17A0013038E /* ApiContext.swift in Sources */,
 				40E876382A03B0770013038E /* APIService.swift in Sources */,
 				40E8764B2A03B22C0013038E /* NonPersistentApiContext.swift in Sources */,
+				40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */,
 				40E8763D2A03B0770013038E /* GetDataSessionRequest.swift in Sources */,
 				40E876392A03B0770013038E /* Environment.swift in Sources */,
 				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,
+				40F64E582A05524B006A6DAC /* PresentationUIHandler+Build.swift in Sources */,
 				40E876412A03B0770013038E /* DataSessionApiService.swift in Sources */,
+				40F64E562A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

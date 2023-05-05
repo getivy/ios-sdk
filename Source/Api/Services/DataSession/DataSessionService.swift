@@ -6,7 +6,6 @@ protocol DataSessionService {
     func retrieveDataSession(
         route: ApiRoute,
         params: GetDataSessionRequest,
-        resultQueue: DispatchQueue,
         completion: @escaping RetrieveDataSessionResponse
     )
 }
