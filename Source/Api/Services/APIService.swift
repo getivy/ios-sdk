@@ -47,7 +47,7 @@ class ApiService {
         task = session.dataTask(with: request, completionHandler: completion)
         task?.resume()
     }
-    
+
     func cancel() {
         task?.cancel()
     }
