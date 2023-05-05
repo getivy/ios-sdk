@@ -1,7 +1,21 @@
 import Foundation
 import UIKit
 
-class PresentationUIHandler: NSObject, UIHandler {
+@objc
+class PresentationUIHandler: NSObject {
+    var masterNavigationController = UINavigationController()
+    var bankId: String?
+
+    override private init() { super.init() }
+
+    init(bankId: String?) {
+        self.bankId = bankId
+
+        super.init()
+    }
+}
+
+extension PresentationUIHandler: UIHandler {
     func openUI(
         viewController _: UIViewController
     ) {}

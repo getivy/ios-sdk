@@ -1,16 +1,16 @@
 import Foundation
 
-public typealias SuccessCallback = () -> Void;
+public typealias SuccessCallback = () -> Void
 
-public typealias ErrorCallback = () -> Void;
+public typealias ErrorCallback = () -> Void
 
 @objc
 public final class GetivySDK: NSObject {
     @objc
     public static let shared = GetivySDK()
-    
+
     var successCallback: SuccessCallback?
-    
+
     var errorCallback: ErrorCallback?
 
     private let api: DataSessionApiService
@@ -21,7 +21,8 @@ public final class GetivySDK: NSObject {
             session: URLSession.shared,
             parser: GetDataSessionResponseParser()
         )
-        super.init() }
+        super.init()
+    }
 
     @objc
     public func initializeHandler(
@@ -42,7 +43,7 @@ public final class GetivySDK: NSObject {
         ) { [weak self] result in
             switch result {
             case let .success(result):
-                let uiHandler = PresentationUIHandler()
+                let uiHandler = PresentationUIHandler(bankId: result.prefill.bankId)
                 handlerResult(uiHandler, nil)
 
             case let .failure(error):
