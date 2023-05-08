@@ -1,13 +1,30 @@
-import Foundation
 import UIKit
 
-class PresentationUIHandler: NSObject, UIHandler {
-    func openUI(
-        viewController _: UIViewController
-    ) {}
+class PresentationUIHandler: NSObject {
+    var mainNavigationController = UINavigationController()
+    var bankId: String?
 
-    func openUI(
-        presentationCosure _: ViewControllerClosure,
-        dismissalClosure _: DismissalClosure = { $0.presentingViewController?.dismiss(animated: true, completion: nil) }
-    ) {}
+    var dismissalHandler: DismissalClosure?
+
+    override private init() { super.init() }
+
+    init(bankId: String?) {
+        self.bankId = bankId
+        
+        super.init()
+        
+        mainNavigationController.setNavigationBarHidden(true, animated: false)
+        startFlow()
+    }
+
+    func startFlow() {
+        if let bankId {
+            presentWebView(
+                bankId: bankId,
+                animated: false
+            )
+        } else {
+            presentBankView(animated: false)
+        }
+    }
 }

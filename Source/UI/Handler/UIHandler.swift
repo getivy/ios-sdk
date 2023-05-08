@@ -1,4 +1,3 @@
-import Foundation
 import UIKit
 
 public typealias DismissalClosure = (UIViewController) -> Void
@@ -13,6 +12,6 @@ public protocol UIHandler {
 
     func openUI(
         presentationCosure: ViewControllerClosure,
-        dismissalClosure: DismissalClosure
+        dismissalClosure: @escaping DismissalClosure
     )
 }

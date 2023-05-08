@@ -23,15 +23,22 @@ final class DataSessionApiService: ApiService, DataSessionService {
             parameters: params
         ) { data, _, _ in
             guard let data else {
-                completion(.failure(GetivySDKError.sessionVerificationFailed))
+                DispatchQueue.main.async {
+                    completion(.failure(GetivySDKError.sessionVerificationFailed))
+                }
                 return
             }
 
             do {
                 let decodedResponse = try self.parser.parse(data: data)
-                completion(.success(decodedResponse))
+                DispatchQueue.main.async {
+                    completion(.success(decodedResponse))
+                }
+
             } catch {
-                completion(.failure(error))
+                DispatchQueue.main.async {
+                    completion(.failure(error))
+                }
             }
         }
     }

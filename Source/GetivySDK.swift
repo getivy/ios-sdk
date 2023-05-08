@@ -1,17 +1,11 @@
 import Foundation
 
-public typealias SuccessCallback = () -> Void;
-
-public typealias ErrorCallback = () -> Void;
-
 @objc
 public final class GetivySDK: NSObject {
     @objc
     public static let shared = GetivySDK()
-    
-    var successCallback: SuccessCallback?
-    
-    var errorCallback: ErrorCallback?
+
+    var config: GetivyConfiguration?
 
     private let api: DataSessionApiService
 
@@ -21,33 +15,30 @@ public final class GetivySDK: NSObject {
             session: URLSession.shared,
             parser: GetDataSessionResponseParser()
         )
-        super.init() }
+        super.init()
+    }
 
     @objc
     public func initializeHandler(
-        id: String,
-        environment: Environment,
-        onSuccess: @escaping SuccessCallback,
-        onError: @escaping ErrorCallback,
+        configuration: GetivyConfiguration,
         handlerResult: @escaping (UIHandler?, Error?) -> Void
     ) {
-        api.context.environment = environment
-        successCallback = onSuccess
-        errorCallback = onError
+        api.context.environment = configuration.environment
+        config = configuration
 
-        let request = GetDataSessionRequest(id: id)
+        let request = GetDataSessionRequest(id: configuration.dataSessionId)
         api.retrieveDataSession(
             route: DataSessionApiRoute.retrieve,
             params: request
         ) { [weak self] result in
             switch result {
             case let .success(result):
-                let uiHandler = PresentationUIHandler()
+                let uiHandler = PresentationUIHandler(bankId: result.prefill.bankId)
                 handlerResult(uiHandler, nil)
 
             case let .failure(error):
                 handlerResult(nil, error)
-                self?.errorCallback?()
+                self?.config?.onError()
             }
         }
     }
