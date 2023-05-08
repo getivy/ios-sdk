@@ -5,15 +5,13 @@ public final class GetivySDK: NSObject {
     @objc
     public static let shared = GetivySDK()
 
-    var config: GetivyConfiguration?
-
     private let api: DataSessionApiService
 
     override private init() {
         api = DataSessionApiService(
             context: NonPersistentApiContext(environment: .production),
             session: URLSession.shared,
-            parser: GetDataSessionResponseParser()
+            parser: DataSessionResponseParser()
         )
         super.init()
 
@@ -32,7 +30,6 @@ public final class GetivySDK: NSObject {
         handlerResult: @escaping (UIHandler?, Error?) -> Void
     ) {
         api.context.environment = configuration.environment
-        config = configuration
 
         let request = GetDataSessionRequest(id: configuration.dataSessionId)
         api.retrieveDataSession(
@@ -44,12 +41,12 @@ public final class GetivySDK: NSObject {
 
                 self?.changeLanguageIfNeeded(response: result)
 
-                let uiHandler = PresentationUIHandler(bankId: result.prefill.bankId)
+                let uiHandler = PresentationUIHandler(config: configuration, bankId: result.prefill.bankId)
                 handlerResult(uiHandler, nil)
 
             case let .failure(error):
                 handlerResult(nil, error)
-                self?.config?.onError()
+                configuration.onError()
             }
         }
     }

@@ -24,7 +24,10 @@ public extension UIFont {
 
         var errorRef: Unmanaged<CFError>?
         if !CTFontManagerRegisterGraphicsFont(font, &errorRef) {
-            print("UIFont+:  Failed to register font - register graphics font failed - this font may have already been registered in the main bundle.")
+            print("""
+            UIFont+:  Failed to register font - register graphics font failed - this
+            font may have already been registered in the main bundle.
+            """)
         }
     }
 }

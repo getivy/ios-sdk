@@ -4,12 +4,13 @@ class PresentationUIHandler: NSObject {
     var mainNavigationController = UINavigationController()
     var bankId: String?
 
+    let config: GetivyConfiguration
+
     var dismissalHandler: DismissalClosure?
 
-    override private init() { super.init() }
-
-    init(bankId: String?) {
+    init(config: GetivyConfiguration, bankId: String?) {
         self.bankId = bankId
+        self.config = config
 
         super.init()
 

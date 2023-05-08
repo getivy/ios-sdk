@@ -5,8 +5,9 @@ public enum GetivySDKError: Error {
     case URLMissingIdParameter
     case couldNotDetermineSessionDetails
     case invalidGetSessionDetailsResponse
-    case unexpectedGetDataSessionResponse
+    case invalidListBanksListResponse
     case couldNotConstructFullUrlForEnvironment
     case sessionVerificationFailed
-    case failedToEncodeGetDataSessionRequest
+    case failedToEncodeRequest
+    case couldNotLoadViewFromStoryboard
 }

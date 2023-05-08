@@ -4,9 +4,10 @@ func presentPopover(
     _ parentViewController: UIViewController,
     _ viewController: UIViewController,
     sender: UIView,
+    size: CGSize,
     arrowDirection: UIPopoverArrowDirection = .down
 ) {
-    viewController.preferredContentSize = CGSize(width: 155, height: 123)
+    viewController.preferredContentSize = size
     viewController.modalPresentationStyle = .popover
     if let pres = viewController.presentationController {
         pres.delegate = parentViewController
@@ -25,7 +26,7 @@ let languageChangedNotification = Notification.Name("kGetivyLanguageChanged")
 func setLocale(code: String) {
     UserDefaults.standard.set(code, forKey: kLocaleKey)
     UserDefaults.standard.synchronize()
-    
+
     NotificationCenter.default.post(name: languageChangedNotification, object: nil)
 }
 

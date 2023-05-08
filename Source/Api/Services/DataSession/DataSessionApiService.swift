@@ -1,12 +1,12 @@
 import Foundation
 
 final class DataSessionApiService: ApiService, DataSessionService {
-    let parser: GetDataSessionResponseParser
+    let parser: DataSessionResponseParser
 
     init(
         context: ApiContext,
         session: URLSession,
-        parser: GetDataSessionResponseParser
+        parser: DataSessionResponseParser
     ) {
         self.parser = parser
 
@@ -14,7 +14,7 @@ final class DataSessionApiService: ApiService, DataSessionService {
     }
 
     func retrieveDataSession(
-        route: ApiRoute,
+        route: DataSessionApiRoute,
         params: GetDataSessionRequest,
         completion: @escaping RetrieveDataSessionResponse
     ) {
@@ -30,7 +30,7 @@ final class DataSessionApiService: ApiService, DataSessionService {
             }
 
             do {
-                let decodedResponse = try self.parser.parse(data: data)
+                let decodedResponse = try self.parser.parseDataSessionDetails(data: data)
                 DispatchQueue.main.async {
                     completion(.success(decodedResponse))
                 }

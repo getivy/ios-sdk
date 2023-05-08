@@ -103,6 +103,9 @@
                                         </constraints>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="back_icon"/>
+                                        <connections>
+                                            <action selector="didPressBack:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="CNM-O8-vBY"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8D-Xr-M35">
                                         <rect key="frame" x="32" y="0.0" width="329" height="24"/>
