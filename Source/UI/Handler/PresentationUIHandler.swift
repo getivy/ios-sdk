@@ -10,9 +10,9 @@ class PresentationUIHandler: NSObject {
 
     init(bankId: String?) {
         self.bankId = bankId
-        
+
         super.init()
-        
+
         mainNavigationController.setNavigationBarHidden(true, animated: false)
         startFlow()
     }

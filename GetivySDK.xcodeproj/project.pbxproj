@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4015C6C02A0972030000B0CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015C6BF2A0972030000B0CE /* Utils.swift */; };
+		4015C6C42A09771A0000B0CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4015C6C62A09771A0000B0CE /* Localizable.strings */; };
+		404E27E82A0980EF009365CA /* String+Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E27E72A0980EF009365CA /* String+Languages.swift */; };
+		405339B92A092DF3000F4E3D /* BankView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 405339B82A092DF3000F4E3D /* BankView.storyboard */; };
+		405339BB2A093252000F4E3D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 405339BA2A093252000F4E3D /* Assets.xcassets */; };
+		405339BE2A0936DE000F4E3D /* GraphikSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 405339BD2A0936DD000F4E3D /* GraphikSemibold.otf */; };
+		405339C12A09372B000F4E3D /* UIFont + CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */; };
+		405339C32A0937AA000F4E3D /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 405339C22A0937AA000F4E3D /* GraphikRegular.otf */; };
+		4082F1E52A095CD30037F6B6 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */; };
+		4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */; };
+		4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */; };
+		4082F1EC2A09661D0037F6B6 /* LanguagesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4082F1EB2A09661D0037F6B6 /* LanguagesView.storyboard */; };
+		4082F1EE2A096B990037F6B6 /* LanguagesViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1ED2A096B990037F6B6 /* LanguagesViewController+Popover.swift */; };
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
 		40D093E32A01539800FBBB5A /* GetivySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D093D82A01539800FBBB5A /* GetivySDK.framework */; };
 		40E876382A03B0770013038E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762B2A03B0770013038E /* APIService.swift */; };
@@ -44,6 +57,21 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4015C6BF2A0972030000B0CE /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		4015C6C52A09771A0000B0CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4015C6C72A0977A80000B0CE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
+		4015C6C82A0977B10000B0CE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		404E27E72A0980EF009365CA /* String+Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Languages.swift"; sourceTree = "<group>"; };
+		405339B82A092DF3000F4E3D /* BankView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = BankView.storyboard; sourceTree = "<group>"; };
+		405339BA2A093252000F4E3D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		405339BD2A0936DD000F4E3D /* GraphikSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemibold.otf; sourceTree = "<group>"; };
+		405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + CustomFonts.swift"; sourceTree = "<group>"; };
+		405339C22A0937AA000F4E3D /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
+		4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
+		4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMuttableAttributedString+Link.swift"; sourceTree = "<group>"; };
+		4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
+		4082F1EB2A09661D0037F6B6 /* LanguagesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagesView.storyboard; sourceTree = "<group>"; };
+		4082F1ED2A096B990037F6B6 /* LanguagesViewController+Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagesViewController+Popover.swift"; sourceTree = "<group>"; };
 		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
 		40D093D82A01539800FBBB5A /* GetivySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetivySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D093E22A01539800FBBB5A /* GetivySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetivySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +118,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4015C6C12A0976300000B0CE /* Translations */ = {
+			isa = PBXGroup;
+			children = (
+				4015C6C62A09771A0000B0CE /* Localizable.strings */,
+			);
+			path = Translations;
+			sourceTree = "<group>";
+		};
+		404E27E42A097F94009365CA /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				4015C6BF2A0972030000B0CE /* Utils.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		405339BC2A0936C6000F4E3D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */,
+				405339C22A0937AA000F4E3D /* GraphikRegular.otf */,
+				405339BD2A0936DD000F4E3D /* GraphikSemibold.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		405339BF2A09371C000F4E3D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */,
+				4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */,
+				404E27E72A0980EF009365CA /* String+Languages.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		4082F1EA2A0965FC0037F6B6 /* Languages */ = {
+			isa = PBXGroup;
+			children = (
+				4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */,
+				4082F1EB2A09661D0037F6B6 /* LanguagesView.storyboard */,
+				4082F1ED2A096B990037F6B6 /* LanguagesViewController+Popover.swift */,
+			);
+			path = Languages;
+			sourceTree = "<group>";
+		};
 		40B69DB22A025D5E00DA03F4 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -119,12 +193,17 @@
 		40E8762A2A03B0770013038E /* Source */ = {
 			isa = PBXGroup;
 			children = (
+				404E27E42A097F94009365CA /* Common */,
+				4015C6C12A0976300000B0CE /* Translations */,
+				405339BF2A09371C000F4E3D /* Extensions */,
+				405339BC2A0936C6000F4E3D /* Fonts */,
 				40F64E592A05674B006A6DAC /* Config */,
 				40E876562A03BAC60013038E /* UI */,
 				40E876502A03B6250013038E /* Api */,
 				40E8762D2A03B0770013038E /* GetivySDK.h */,
 				40E8762E2A03B0770013038E /* GetivySDK.swift */,
 				40E8762F2A03B0770013038E /* GetivySDKError.swift */,
+				405339BA2A093252000F4E3D /* Assets.xcassets */,
 			);
 			path = Source;
 			sourceTree = "<group>";
@@ -180,6 +259,7 @@
 		40E876562A03BAC60013038E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				4082F1EA2A0965FC0037F6B6 /* Languages */,
 				40F64E502A054E73006A6DAC /* Web */,
 				40F64E4F2A054E3F006A6DAC /* Bank */,
 				40E876572A03BACD0013038E /* Handler */,
@@ -221,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				40F64E4D2A054E36006A6DAC /* BankViewController.swift */,
+				405339B82A092DF3000F4E3D /* BankView.storyboard */,
 			);
 			path = Bank;
 			sourceTree = "<group>";
@@ -318,6 +399,8 @@
 			knownRegions = (
 				en,
 				Base,
+				nl,
+				de,
 			);
 			mainGroup = 40D093CE2A01539800FBBB5A;
 			productRefGroup = 40D093D92A01539800FBBB5A /* Products */;
@@ -335,6 +418,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				405339BB2A093252000F4E3D /* Assets.xcassets in Resources */,
+				4082F1E52A095CD30037F6B6 /* Inter-Regular.otf in Resources */,
+				405339C32A0937AA000F4E3D /* GraphikRegular.otf in Resources */,
+				4015C6C42A09771A0000B0CE /* Localizable.strings in Resources */,
+				405339BE2A0936DE000F4E3D /* GraphikSemibold.otf in Resources */,
+				405339B92A092DF3000F4E3D /* BankView.storyboard in Resources */,
+				4082F1EC2A09661D0037F6B6 /* LanguagesView.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,12 +483,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4082F1EE2A096B990037F6B6 /* LanguagesViewController+Popover.swift in Sources */,
 				40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */,
+				4015C6C02A0972030000B0CE /* Utils.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
 				40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */,
+				405339C12A09372B000F4E3D /* UIFont + CustomFonts.swift in Sources */,
 				40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */,
 				40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */,
 				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
+				4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */,
 				40E8763E2A03B0770013038E /* GetDataSessionResponse.swift in Sources */,
 				40E8763F2A03B0770013038E /* GetDataSessionResponseParser.swift in Sources */,
 				40E876432A03B0770013038E /* UIHandler.swift in Sources */,
@@ -409,7 +503,9 @@
 				40E876382A03B0770013038E /* APIService.swift in Sources */,
 				40E8764B2A03B22C0013038E /* NonPersistentApiContext.swift in Sources */,
 				40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */,
+				4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */,
 				40E8763D2A03B0770013038E /* GetDataSessionRequest.swift in Sources */,
+				404E27E82A0980EF009365CA /* String+Languages.swift in Sources */,
 				40E876392A03B0770013038E /* Environment.swift in Sources */,
 				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,
 				40F64E582A05524B006A6DAC /* PresentationUIHandler+Build.swift in Sources */,
@@ -435,11 +531,25 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		4015C6C62A09771A0000B0CE /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4015C6C52A09771A0000B0CE /* en */,
+				4015C6C72A0977A80000B0CE /* nl */,
+				4015C6C82A0977B10000B0CE /* de */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		40D093EA2A01539800FBBB5A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -503,6 +613,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";

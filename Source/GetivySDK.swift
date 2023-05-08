@@ -1,4 +1,4 @@
-import Foundation
+import UIKit
 
 @objc
 public final class GetivySDK: NSObject {
@@ -16,6 +16,14 @@ public final class GetivySDK: NSObject {
             parser: GetDataSessionResponseParser()
         )
         super.init()
+
+        registerFonts()
+    }
+
+    func registerFonts() {
+        UIFont.ivy_registerFont(withFilenameString: "GraphikRegular.otf")
+        UIFont.ivy_registerFont(withFilenameString: "GraphikSemibold.otf")
+        UIFont.ivy_registerFont(withFilenameString: "Inter-Regular.otf")
     }
 
     @objc
@@ -33,6 +41,9 @@ public final class GetivySDK: NSObject {
         ) { [weak self] result in
             switch result {
             case let .success(result):
+
+                self?.changeLanguageIfNeeded(response: result)
+
                 let uiHandler = PresentationUIHandler(bankId: result.prefill.bankId)
                 handlerResult(uiHandler, nil)
 
@@ -41,5 +52,17 @@ public final class GetivySDK: NSObject {
                 self?.config?.onError()
             }
         }
+    }
+
+    func changeLanguageIfNeeded(response: GetDataSessionResponse) {
+        if getLocale() != nil {
+            return
+        }
+
+        setLocale(code:
+            response.locale ??
+                Locale.current.languageCode ??
+                Languages.english.rawValue
+        )
     }
 }
