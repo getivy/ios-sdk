@@ -33,7 +33,7 @@ extension PresentationUIHandler {
 
         presentPopover(mainNavigationController, languagesView, sender: view, size: CGSize(width: width, height: height))
     }
-    
+
     func goBack() {
         mainNavigationController.popViewController(animated: true)
     }

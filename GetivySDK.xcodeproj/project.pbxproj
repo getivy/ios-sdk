@@ -46,6 +46,7 @@
 		40E8764D2A03B3480013038E /* APIRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764C2A03B3480013038E /* APIRoute.swift */; };
 		40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */; };
 		40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8765B2A03CB450013038E /* DataSessionService.swift */; };
+		40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00312A0A476F00715BF0 /* UIColor+Image.swift */; };
 		40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E4D2A054E36006A6DAC /* BankViewController.swift */; };
 		40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E512A054E92006A6DAC /* WebViewController.swift */; };
 		40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */; };
@@ -107,6 +108,7 @@
 		40E8764C2A03B3480013038E /* APIRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRoute.swift; sourceTree = "<group>"; };
 		40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionApiRoute.swift; sourceTree = "<group>"; };
 		40E8765B2A03CB450013038E /* DataSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionService.swift; sourceTree = "<group>"; };
+		40EA00312A0A476F00715BF0 /* UIColor+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Image.swift"; sourceTree = "<group>"; };
 		40F64E4D2A054E36006A6DAC /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		40F64E512A054E92006A6DAC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+Routing.swift"; sourceTree = "<group>"; };
@@ -195,6 +197,7 @@
 				404E27E72A0980EF009365CA /* String+Languages.swift */,
 				404E27EE2A098A70009365CA /* ApiRoute+URL.swift */,
 				404E27FC2A09985D009365CA /* UIImageView+URL.swift */,
+				40EA00312A0A476F00715BF0 /* UIColor+Image.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -536,6 +539,7 @@
 				4015C6C02A0972030000B0CE /* Utils.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
 				404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */,
+				40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */,
 				404E27F32A098AE0009365CA /* ListBanksRequest.swift in Sources */,
 				40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */,
 				405339C12A09372B000F4E3D /* UIFont + CustomFonts.swift in Sources */,

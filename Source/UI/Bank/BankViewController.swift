@@ -63,7 +63,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Set search field font
 
-        let searchFont = UIFont(name: "GraphikRegular", size: searchSize)
+        let searchFont = UIFont(name: "Graphik-Regular", size: searchSize)
         for subView in searchBar.subviews {
             if let searchField = subView as? UITextField {
                 searchField.font = searchFont
@@ -127,14 +127,20 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
         let item = filteredBanks[indexPath.row]
-        cell.textLabel?.text = item.group ?? item.name
+        let itemName = item.group ?? item.name
+        cell.textLabel?.text = itemName
         let imageSize = 42
-        cell.imageView?.image = UIColor.clear.image(CGSize(width: imageSize, height: imageSize))
+        let fontSizeForLetter: CGFloat = 20
+        cell.imageView?.image = UIColor(hexString: "#BDBDBD")?
+            .imageWithInitial(String(itemName.first ?? "B"),
+                              size: CGSize(width: imageSize, height: imageSize),
+                              textColor: .white,
+                              font: UIFont(name: "Graphik-Regular", size: fontSizeForLetter) ?? UIFont())
         cell.imageView?.load(url: URL(string: item.logo))
         cell.accessoryType = .disclosureIndicator
         return cell
     }
-    
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = filteredBanks[indexPath.row]
         if item.group != nil {
@@ -153,14 +159,5 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         isSearching = !searchText.isEmpty
         tableView.reloadData()
-    }
-}
-
-extension UIColor {
-    func image(_ size: CGSize = CGSize(width: 1, height: 1)) -> UIImage {
-        return UIGraphicsImageRenderer(size: size).image { rendererContext in
-            self.setFill()
-            rendererContext.fill(CGRect(origin: .zero, size: size))
-        }
     }
 }
