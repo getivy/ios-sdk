@@ -108,23 +108,31 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         let bundle = Bundle(for: LanguagesViewController.self)
 
+        let disclaimerString = "bankDisclaimer".localized(language: language)
+        let mutableString = NSMutableAttributedString(string: disclaimerString)
+
         switch language {
         case .dutch:
+            mutableString.setAsUnderlinedLink(textToFind: " Ivy", linkURL: "https://getivy.io")
+            mutableString.setAsUnderlinedLink(textToFind: "AV van", linkURL: "https://getivy.io/agbs")
+            mutableString.setAsUnderlinedLink(textToFind: "Privacybeleid", linkURL: "https://getivy.io/datenschutz")
+            mutableString.setAsUnderlinedLink(textToFind: "Cookiebeleid", linkURL: "https://getivy.io/datenschutz")
             languageButton.setImage(UIImage(named: "Nederlands", in: bundle, compatibleWith: nil), for: .normal)
         case .english:
+            mutableString.setAsUnderlinedLink(textToFind: "Ivy's ", linkURL: "https://getivy.io")
+            mutableString.setAsUnderlinedLink(textToFind: "Terms", linkURL: "https://getivy.io/agbs")
+            mutableString.setAsUnderlinedLink(textToFind: "Privacy Policy", linkURL: "https://getivy.io/datenschutz")
+            mutableString.setAsUnderlinedLink(textToFind: "Cookie Policy", linkURL: "https://getivy.io/datenschutz")
             languageButton.setImage(UIImage(named: "English", in: bundle, compatibleWith: nil), for: .normal)
         case .german:
+            mutableString.setAsUnderlinedLink(textToFind: "Ivy's ", linkURL: "https://getivy.io")
+            mutableString.setAsUnderlinedLink(textToFind: "AGBs", linkURL: "https://getivy.io/agbs")
+            mutableString.setAsUnderlinedLink(textToFind: "Datenschutzbestimmung", linkURL: "https://getivy.io/datenschutz")
+            mutableString.setAsUnderlinedLink(textToFind: "Cookie-Richtlinie", linkURL: "https://getivy.io/datenschutz")
             languageButton.setImage(UIImage(named: "Germany", in: bundle, compatibleWith: nil), for: .normal)
         }
 
         titleLabel.text = "bankTitle".localized(language: language)
-
-        let disclaimerString = "bankDisclaimer".localized(language: language)
-        let mutableString = NSMutableAttributedString(string: disclaimerString)
-        mutableString.setAsUnderlinedLink(textToFind: "Ivy's ", linkURL: "https://getivy.io")
-        mutableString.setAsUnderlinedLink(textToFind: "AGBs", linkURL: "https://getivy.io/agbs")
-        mutableString.setAsUnderlinedLink(textToFind: "Datenschutzbestimmung", linkURL: "https://getivy.io/datenschutz")
-        mutableString.setAsUnderlinedLink(textToFind: "Cookie-Richtlinie", linkURL: "https://getivy.io/datenschutz")
         disclaimerTextView.attributedText = mutableString
 
         searchBar.placeholder = "bankSearchSuggestion".localized(language: language)
@@ -175,7 +183,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     // MARK: - Search bar delegate
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        if let group {
+        if group != nil {
             filteredBanks = searchText.isEmpty ? banks : banks.filter { (item: BankDetails) -> Bool in
                 // If the search text is empty, show all elements. Otherwise, filter based on the search text
                 let value = item.group ?? item.name
