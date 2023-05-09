@@ -1,27 +1,20 @@
 import UIKit
+import WebKit
 
 class WebViewController: UIViewController {
-    let kFontSize: CGFloat = 25
+    @IBOutlet var webView: WKWebView!
+
+    var bankId: String!
+    var router: PresentationUIHandler!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = .white
-
-        // Create a label and set its properties
-        let label = UILabel()
-        label.text = "Web view"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: kFontSize)
-
-        // Add the label to the view controller's view
-        view.addSubview(label)
-
-        // Set the constraints for the label to be centered in the view
-        label.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            label.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            label.centerYAnchor.constraint(equalTo: view.centerYAnchor),
-        ])
+        let webApiRoute = WebViewApiRoute.load(dataSessionId: router.config.dataSessionId, bankId: bankId)
+        guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
+            return
+        }
+        let request = URLRequest(url: url)
+        webView.load(request)
     }
 }

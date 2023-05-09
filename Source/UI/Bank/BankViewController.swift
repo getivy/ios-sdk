@@ -167,9 +167,8 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let item = filteredBanks[indexPath.row]
         if group == nil && item.group != nil {
             router?.presentBankView(animated: true, group: item.group)

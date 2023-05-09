@@ -11,4 +11,5 @@ public enum GetivySDKError: Error {
     case sessionVerificationFailed
     case failedToEncodeRequest
     case couldNotLoadViewFromStoryboard
+    case webViewLoadedWithoutBankId
 }

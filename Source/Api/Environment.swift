@@ -16,4 +16,15 @@ public enum Environment: Int {
             return "https://api.dev.getivy.de"
         }
     }
+
+    var paymentsUrl: String {
+        switch self {
+        case .production:
+            return "https://account-check.getivy.de"
+        case .sandbox:
+            return "https://account-check.sand.getivy.de"
+        case .development:
+            return "https://account-check.dev.getivy.de"
+        }
+    }
 }

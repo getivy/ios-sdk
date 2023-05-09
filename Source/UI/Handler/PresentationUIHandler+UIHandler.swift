@@ -4,7 +4,9 @@ extension PresentationUIHandler: UIHandler {
     func openUI(
         viewController: UIViewController
     ) {
-        viewController.present(mainNavigationController, animated: true)
+        viewController.present(mainNavigationController, animated: true) { [weak self] in
+            self?.config.onExit()
+        }
     }
 
     func openUI(

@@ -51,6 +51,8 @@
 		40EA00362A0A64BF00715BF0 /* SearchBanksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00352A0A64BF00715BF0 /* SearchBanksResponse.swift */; };
 		40EA003A2A0A809C00715BF0 /* BankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00392A0A809C00715BF0 /* BankTableViewCell.swift */; };
 		40EA003C2A0A821700715BF0 /* UITableViewCell+ReuseIdentifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA003B2A0A821700715BF0 /* UITableViewCell+ReuseIdentifier.swift */; };
+		40EA003E2A0A887C00715BF0 /* WebView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 40EA003D2A0A887C00715BF0 /* WebView.storyboard */; };
+		40EA00402A0A8A3F00715BF0 /* WebViewApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA003F2A0A8A3F00715BF0 /* WebViewApiRoute.swift */; };
 		40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E4D2A054E36006A6DAC /* BankViewController.swift */; };
 		40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E512A054E92006A6DAC /* WebViewController.swift */; };
 		40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */; };
@@ -117,6 +119,8 @@
 		40EA00352A0A64BF00715BF0 /* SearchBanksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBanksResponse.swift; sourceTree = "<group>"; };
 		40EA00392A0A809C00715BF0 /* BankTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankTableViewCell.swift; sourceTree = "<group>"; };
 		40EA003B2A0A821700715BF0 /* UITableViewCell+ReuseIdentifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+ReuseIdentifier.swift"; sourceTree = "<group>"; };
+		40EA003D2A0A887C00715BF0 /* WebView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WebView.storyboard; sourceTree = "<group>"; };
+		40EA003F2A0A8A3F00715BF0 /* WebViewApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewApiRoute.swift; sourceTree = "<group>"; };
 		40F64E4D2A054E36006A6DAC /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		40F64E512A054E92006A6DAC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+Routing.swift"; sourceTree = "<group>"; };
@@ -286,6 +290,7 @@
 				40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */,
 				40E8764C2A03B3480013038E /* APIRoute.swift */,
 				404E27EC2A0989D7009365CA /* BanksApiRoute.swift */,
+				40EA003F2A0A8A3F00715BF0 /* WebViewApiRoute.swift */,
 			);
 			path = Routes;
 			sourceTree = "<group>";
@@ -373,6 +378,7 @@
 			isa = PBXGroup;
 			children = (
 				40F64E512A054E92006A6DAC /* WebViewController.swift */,
+				40EA003D2A0A887C00715BF0 /* WebView.storyboard */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -483,6 +489,7 @@
 			files = (
 				405339BB2A093252000F4E3D /* Assets.xcassets in Resources */,
 				4082F1E52A095CD30037F6B6 /* Inter-Regular.otf in Resources */,
+				40EA003E2A0A887C00715BF0 /* WebView.storyboard in Resources */,
 				405339C32A0937AA000F4E3D /* GraphikRegular.otf in Resources */,
 				4015C6C42A09771A0000B0CE /* Localizable.strings in Resources */,
 				405339BE2A0936DE000F4E3D /* GraphikSemibold.otf in Resources */,
@@ -550,6 +557,7 @@
 				40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */,
 				4015C6C02A0972030000B0CE /* Utils.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
+				40EA00402A0A8A3F00715BF0 /* WebViewApiRoute.swift in Sources */,
 				404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */,
 				40EA00362A0A64BF00715BF0 /* SearchBanksResponse.swift in Sources */,
 				40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */,
