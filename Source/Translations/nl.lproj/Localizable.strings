@@ -1,3 +1,5 @@
 "bankTitle" = "Kies uw bank";
 "bankSearchSuggestion" = "Zoek";
 "bankDisclaimer" = "Door hierboven uw bank te selecteren, gaat u akkoord met de AV van Ivy, het Privacybeleid en het Cookiebeleid.";
+"noBanksFoundTitle" = "Geen zoekresultaten gevonden.";
+"noBanksFoundMessage" = "Probeer een andere zoekopdracht.";

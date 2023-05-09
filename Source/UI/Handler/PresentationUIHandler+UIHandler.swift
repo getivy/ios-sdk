@@ -5,7 +5,7 @@ extension PresentationUIHandler: UIHandler {
         viewController: UIViewController
     ) {
         viewController.present(mainNavigationController, animated: true) { [weak self] in
-            self?.config.onExit()
+            self?.config.onError()
         }
     }
 
