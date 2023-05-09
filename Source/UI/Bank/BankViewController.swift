@@ -8,6 +8,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     var banksService: BanksApiService?
     var group: String?
 
+    @IBOutlet var backButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var disclaimerTextView: UITextView!
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var poweredByContainer: UIView!
@@ -73,7 +74,10 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         let searchSize: CGFloat = 14
 
         backButton.setTitle("", for: .normal)
-        backButton.isHidden = group == nil
+        if group == nil {
+            backButton.isHidden = true
+            backButtonWidthConstraint.constant = 0
+        }
         languageButton.setTitle("", for: .normal)
         languageButton.imageView?.contentMode = .scaleAspectFit
         poweredByContainer.layer.cornerRadius = cornerRadius
