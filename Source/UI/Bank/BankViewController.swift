@@ -3,7 +3,6 @@ import UIKit
 class BankViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UISearchBarDelegate {
     var banks: [BankDetails] = []
     var filteredBanks: [BankDetails] = []
-    var isSearching = false
 
     var router: PresentationUIHandler?
     var banksService: BanksApiService?
@@ -26,7 +25,28 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         setupView()
 
-        sendBanksRequest()
+        if group != nil {
+            sendBanksRequest()
+        } else {
+            sendSearchRequest()
+        }
+    }
+
+    func sendSearchRequest() {
+        banksService?.search(
+            route: .search,
+            params: SearchBanksRequest(search: searchBar.text ?? "", market: "DE"),
+            completion: { [weak self] result in
+                switch result {
+                case let .success(banks):
+                    self?.banks = banks
+                    self?.filteredBanks = banks
+                    self?.tableView.reloadData()
+                case let .failure(error):
+                    print("GetivySDK: Error getting banks search: ", error)
+                }
+            }
+        )
     }
 
     func sendBanksRequest() {
@@ -40,7 +60,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self?.filteredBanks = banks
                     self?.tableView.reloadData()
                 case let .failure(error):
-                    print("GetivySDK: Error getting banks list: %@", error)
+                    print("GetivySDK: Error getting banks list: ", error)
                 }
             }
         )
@@ -77,7 +97,8 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
-    @IBAction func didPressBack(_ sender: UIButton) {
+    @IBAction
+    func didPressBack(_ sender: UIButton) {
         router?.goBack()
     }
 
@@ -109,7 +130,8 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         searchBar.placeholder = "bankSearchSuggestion".localized(language: language)
     }
 
-    @IBAction func didPressLanguageButton(_ sender: UIButton) {
+    @IBAction
+    func didPressLanguageButton(_ sender: UIButton) {
         guard let router else {
             print("GetivySDK: Router not found in banks screen")
             return
@@ -143,21 +165,26 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let item = filteredBanks[indexPath.row]
-        if item.group != nil {
+        if group == nil && item.group != nil {
             router?.presentBankView(animated: true, group: item.group)
+        } else {
+            router?.presentWebView(bankId: item.id, animated: true)
         }
     }
 
     // MARK: - Search bar delegate
 
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        filteredBanks = searchText.isEmpty ? banks : banks.filter { (item: BankDetails) -> Bool in
-            // If the search text is empty, show all elements. Otherwise, filter based on the search text
-            let value = item.group ?? item.name
-            return value.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
-        }
+        if let group {
+            filteredBanks = searchText.isEmpty ? banks : banks.filter { (item: BankDetails) -> Bool in
+                // If the search text is empty, show all elements. Otherwise, filter based on the search text
+                let value = item.group ?? item.name
+                return value.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
+            }
 
-        isSearching = !searchText.isEmpty
-        tableView.reloadData()
+            tableView.reloadData()
+        } else {
+            sendSearchRequest()
+        }
     }
 }

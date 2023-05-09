@@ -47,6 +47,8 @@
 		40E8764F2A03B3740013038E /* DataSessionApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */; };
 		40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8765B2A03CB450013038E /* DataSessionService.swift */; };
 		40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00312A0A476F00715BF0 /* UIColor+Image.swift */; };
+		40EA00342A0A64B300715BF0 /* SearchBanksRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00332A0A64B300715BF0 /* SearchBanksRequest.swift */; };
+		40EA00362A0A64BF00715BF0 /* SearchBanksResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40EA00352A0A64BF00715BF0 /* SearchBanksResponse.swift */; };
 		40F64E4E2A054E36006A6DAC /* BankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E4D2A054E36006A6DAC /* BankViewController.swift */; };
 		40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E512A054E92006A6DAC /* WebViewController.swift */; };
 		40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */; };
@@ -109,6 +111,8 @@
 		40E8764E2A03B3740013038E /* DataSessionApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionApiRoute.swift; sourceTree = "<group>"; };
 		40E8765B2A03CB450013038E /* DataSessionService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataSessionService.swift; sourceTree = "<group>"; };
 		40EA00312A0A476F00715BF0 /* UIColor+Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Image.swift"; sourceTree = "<group>"; };
+		40EA00332A0A64B300715BF0 /* SearchBanksRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBanksRequest.swift; sourceTree = "<group>"; };
+		40EA00352A0A64BF00715BF0 /* SearchBanksResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchBanksResponse.swift; sourceTree = "<group>"; };
 		40F64E4D2A054E36006A6DAC /* BankViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankViewController.swift; sourceTree = "<group>"; };
 		40F64E512A054E92006A6DAC /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+Routing.swift"; sourceTree = "<group>"; };
@@ -166,6 +170,8 @@
 			children = (
 				404E27F22A098AE0009365CA /* ListBanksRequest.swift */,
 				404E27F62A098B01009365CA /* ListBanksResponse.swift */,
+				40EA00332A0A64B300715BF0 /* SearchBanksRequest.swift */,
+				40EA00352A0A64BF00715BF0 /* SearchBanksResponse.swift */,
 			);
 			path = Banks;
 			sourceTree = "<group>";
@@ -539,6 +545,7 @@
 				4015C6C02A0972030000B0CE /* Utils.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
 				404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */,
+				40EA00362A0A64BF00715BF0 /* SearchBanksResponse.swift in Sources */,
 				40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */,
 				404E27F32A098AE0009365CA /* ListBanksRequest.swift in Sources */,
 				40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */,
@@ -547,6 +554,7 @@
 				404E27F72A098B01009365CA /* ListBanksResponse.swift in Sources */,
 				40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */,
 				40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */,
+				40EA00342A0A64B300715BF0 /* SearchBanksRequest.swift in Sources */,
 				404E27FB2A098CA7009365CA /* BanksResponseParser.swift in Sources */,
 				404E27F92A098C04009365CA /* BanksApiService.swift in Sources */,
 				404E27FD2A09985D009365CA /* UIImageView+URL.swift in Sources */,

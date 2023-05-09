@@ -6,6 +6,7 @@ public enum GetivySDKError: Error {
     case couldNotDetermineSessionDetails
     case invalidGetSessionDetailsResponse
     case invalidListBanksListResponse
+    case invalidSearchBanksListResponse
     case couldNotConstructFullUrlForEnvironment
     case sessionVerificationFailed
     case failedToEncodeRequest

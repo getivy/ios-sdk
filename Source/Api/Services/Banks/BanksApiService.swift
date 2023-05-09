@@ -43,10 +43,10 @@ final class BanksApiService: ApiService, BanksService {
         }
     }
 
-    func retrieveDataSession(
-        route: ApiRoute,
-        params: GetDataSessionRequest,
-        completion: @escaping ListBanksCompletion
+    func search(
+        route: BanksApiRoute,
+        params: SearchBanksRequest,
+        completion: @escaping SearchBanksCompletion
     ) {
         post(
             route: route,
@@ -60,7 +60,7 @@ final class BanksApiService: ApiService, BanksService {
             }
 
             do {
-                let decodedResponse = try self.parser.parseListResponse(data: data)
+                let decodedResponse = try self.parser.parseSearchResponse(data: data)
                 DispatchQueue.main.async {
                     completion(.success(decodedResponse.banks))
                 }
