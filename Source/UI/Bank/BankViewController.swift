@@ -98,7 +98,6 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Setup table
         tableView.delegate = self
         tableView.dataSource = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
     }
 
     @IBAction
@@ -159,23 +158,18 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "BankTableViewCell", for: indexPath) as? BankTableViewCell else {
+            return UITableViewCell()
+        }
         let item = filteredBanks[indexPath.row]
-        let itemName = item.group ?? item.name
-        cell.textLabel?.text = itemName
-        let imageSize = 42
-        let fontSizeForLetter: CGFloat = 20
-        cell.imageView?.image = UIColor(hexString: "#BDBDBD")?
-            .imageWithInitial(String(itemName.first ?? "B"),
-                              size: CGSize(width: imageSize, height: imageSize),
-                              textColor: .white,
-                              font: UIFont(name: "Graphik-Regular", size: fontSizeForLetter) ?? UIFont())
-        cell.imageView?.load(url: URL(string: item.logo))
-        cell.accessoryType = .disclosureIndicator
+        cell.setup(item: item)
         return cell
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
         let item = filteredBanks[indexPath.row]
         if group == nil && item.group != nil {
             router?.presentBankView(animated: true, group: item.group)

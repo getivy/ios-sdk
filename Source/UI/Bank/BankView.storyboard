@@ -36,8 +36,45 @@
                                 </connections>
                             </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" horizontalCompressionResistancePriority="250" verticalCompressionResistancePriority="250" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="TWb-Eu-NYL">
-                                <rect key="frame" x="16" y="203" width="361" height="463"/>
+                                <rect key="frame" x="16" y="203.00000000000003" width="361" height="462.66666666666674"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="BankTableViewCell" id="OTd-qb-lCq" customClass="BankTableViewCell" customModule="GetivySDK" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="50" width="361" height="66"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OTd-qb-lCq" id="SSr-lS-tVh">
+                                            <rect key="frame" x="0.0" y="0.0" width="330.66666666666669" height="66"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GTe-YG-lnb">
+                                                    <rect key="frame" x="4" y="12" width="42" height="42"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="42" id="FZS-Hj-I1r"/>
+                                                        <constraint firstAttribute="width" constant="42" id="rzV-3J-4qP"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="X1v-yu-7PV">
+                                                    <rect key="frame" x="64" y="23.333333333333336" width="262.66666666666669" height="19.333333333333336"/>
+                                                    <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="16"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="bottom" secondItem="GTe-YG-lnb" secondAttribute="bottom" constant="12" id="HXz-W0-A15"/>
+                                                <constraint firstAttribute="trailing" secondItem="X1v-yu-7PV" secondAttribute="trailing" constant="4" id="IDp-vZ-M3l"/>
+                                                <constraint firstItem="X1v-yu-7PV" firstAttribute="leading" secondItem="GTe-YG-lnb" secondAttribute="trailing" constant="18" id="QJu-C0-WnU"/>
+                                                <constraint firstItem="GTe-YG-lnb" firstAttribute="top" secondItem="SSr-lS-tVh" secondAttribute="top" constant="12" id="Xip-XP-Pth"/>
+                                                <constraint firstItem="X1v-yu-7PV" firstAttribute="centerY" secondItem="GTe-YG-lnb" secondAttribute="centerY" id="fJG-hB-dvO"/>
+                                                <constraint firstItem="GTe-YG-lnb" firstAttribute="leading" secondItem="SSr-lS-tVh" secondAttribute="leading" constant="4" id="xJr-Lb-3J3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="bankNameLabel" destination="X1v-yu-7PV" id="kH2-wi-c34"/>
+                                            <outlet property="logoImageView" destination="GTe-YG-lnb" id="E3U-GX-AX0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
                             <view contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="GMN-ul-Kht">
                                 <rect key="frame" x="16" y="763" width="361" height="31"/>
@@ -55,16 +92,16 @@
                                         </connections>
                                     </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gbE-Ss-JhK">
-                                        <rect key="frame" x="232" y="0.0" width="129" height="31"/>
+                                        <rect key="frame" x="230" y="0.0" width="131" height="31"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" image="logo-dark" translatesAutoresizingMaskIntoConstraints="NO" id="Kp4-QR-ND1">
-                                                <rect key="frame" x="86" y="8" width="35" height="15"/>
+                                                <rect key="frame" x="88" y="8" width="35" height="15"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="35" id="0D1-No-hGc"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" text="Powered by" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z49-7z-J8h">
-                                                <rect key="frame" x="16" y="9" width="64" height="13"/>
+                                                <rect key="frame" x="16" y="9" width="66" height="13"/>
                                                 <fontDescription key="fontDescription" name="Graphik-Regular" family="Graphik" pointSize="12"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -135,7 +172,7 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" scrollEnabled="NO" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fUF-EW-Cp7">
-                                <rect key="frame" x="16" y="686" width="361" height="40"/>
+                                <rect key="frame" x="16" y="685.66666666666663" width="361" height="40.333333333333371"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Indem du oben deine Bank auswählst, erklärst du dich mit Ivy's AGBs, der Datenschutzbestimmung und der Cookie-Richtlinie einverstanden.</string>
                                 <color key="textColor" systemColor="labelColor"/>
