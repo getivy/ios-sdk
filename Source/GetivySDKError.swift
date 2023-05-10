@@ -11,4 +11,8 @@ public enum GetivySDKError: Error {
     case sessionVerificationFailed
     case failedToEncodeRequest
     case couldNotLoadViewFromStoryboard
+    case webViewLoadedWithoutBankId
 }
+
+
+// 2. Return some errors prefixed with something to mean ios to client

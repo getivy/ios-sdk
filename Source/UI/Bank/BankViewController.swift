@@ -4,10 +4,13 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     var banks: [BankDetails] = []
     var filteredBanks: [BankDetails] = []
 
-    var router: PresentationUIHandler?
-    var banksService: BanksApiService?
+    var router: PresentationUIHandler!
+    var banksService: BanksApiService!
     var group: String?
 
+    @IBOutlet var noResultsSubtitle: UILabel!
+    @IBOutlet var noResultsTitle: UILabel!
+    @IBOutlet var noResultsContainerView: UIView!
     @IBOutlet var backButtonWidthConstraint: NSLayoutConstraint!
     @IBOutlet var disclaimerTextView: UITextView!
     @IBOutlet var titleLabel: UILabel!
@@ -22,9 +25,9 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
 
-        languageChanged()
-
         setupView()
+        
+        languageChanged()
 
         if group != nil {
             sendBanksRequest()
@@ -36,13 +39,13 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     func sendSearchRequest() {
         banksService?.search(
             route: .search,
-            params: SearchBanksRequest(search: searchBar.text ?? "", market: "DE"),
+            params: SearchBanksRequest(search: searchBar.text ?? "", market: router.market),
             completion: { [weak self] result in
                 switch result {
                 case let .success(banks):
                     self?.banks = banks
                     self?.filteredBanks = banks
-                    self?.tableView.reloadData()
+                    self?.reloadData()
                 case let .failure(error):
                     print("GetivySDK: Error getting banks search: ", error)
                 }
@@ -59,7 +62,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
                 case let .success(banks):
                     self?.banks = banks
                     self?.filteredBanks = banks
-                    self?.tableView.reloadData()
+                    self?.reloadData()
                 case let .failure(error):
                     print("GetivySDK: Error getting banks list: ", error)
                 }
@@ -73,6 +76,14 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         let disclaimerSize: CGFloat = 10
         let searchSize: CGFloat = 14
 
+        let semiBold = UIFont(name: "Graphik-Semibold", size: titleSize)
+        let regular = UIFont(name: "Graphik-Regular", size: searchSize)
+
+        noResultsTitle.textColor = UIColor(hexString: "#252525")
+        noResultsTitle.font = semiBold
+        noResultsSubtitle.textColor = UIColor(hexString: "#717171")
+        noResultsSubtitle.font = regular
+
         backButton.setTitle("", for: .normal)
         if group == nil {
             backButton.isHidden = true
@@ -82,15 +93,14 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         languageButton.imageView?.contentMode = .scaleAspectFit
         poweredByContainer.layer.cornerRadius = cornerRadius
 
-        titleLabel.font = UIFont(name: "Graphik-Semibold", size: titleSize)
+        titleLabel.font = semiBold
         disclaimerTextView.font = UIFont(name: "Inter-Regular", size: disclaimerSize)
 
         // Set search field font
 
-        let searchFont = UIFont(name: "Graphik-Regular", size: searchSize)
         for subView in searchBar.subviews {
             if let searchField = subView as? UITextField {
-                searchField.font = searchFont
+                searchField.font = regular
                 break
             }
         }
@@ -139,6 +149,9 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         disclaimerTextView.attributedText = mutableString
 
         searchBar.placeholder = "bankSearchSuggestion".localized(language: language)
+
+        noResultsTitle.text = "noBanksFoundTitle".localized(language: language)
+        noResultsSubtitle.text = "noBanksFoundMessage".localized(language: language)
     }
 
     @IBAction
@@ -167,9 +180,8 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         tableView.deselectRow(at: indexPath, animated: true)
-        
+
         let item = filteredBanks[indexPath.row]
         if group == nil && item.group != nil {
             router?.presentBankView(animated: true, group: item.group)
@@ -188,9 +200,14 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return value.range(of: searchText, options: .caseInsensitive, range: nil, locale: nil) != nil
             }
 
-            tableView.reloadData()
+            reloadData()
         } else {
             sendSearchRequest()
         }
+    }
+
+    func reloadData() {
+        tableView.reloadData()
+        noResultsContainerView.isHidden = !filteredBanks.isEmpty
     }
 }

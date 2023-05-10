@@ -18,8 +18,17 @@ extension PresentationUIHandler {
         return viewController
     }
 
-    func buildWebView() -> WebViewController {
-        return WebViewController()
+    func buildWebView(bankId: String) throws -> WebViewController {
+        let storyboard = UIStoryboard(name: "WebView", bundle: Bundle(for: PresentationUIHandler.self))
+
+        guard let viewController = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
+            throw GetivySDKError.couldNotLoadViewFromStoryboard
+        }
+
+        viewController.bankId = bankId
+        viewController.router = self
+
+        return viewController
     }
 
     func buildLanguages() throws -> LanguagesViewController {

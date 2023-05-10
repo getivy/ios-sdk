@@ -41,12 +41,21 @@ public final class GetivySDK: NSObject {
 
                 self?.changeLanguageIfNeeded(response: result)
 
-                let uiHandler = PresentationUIHandler(config: configuration, bankId: result.prefill.bankId)
-                handlerResult(uiHandler, nil)
-
+                let uiHandler = PresentationUIHandler(
+                    config: configuration,
+                    bankId: result.prefill.bankId,
+                    market: result.market
+                )
+                DispatchQueue.main.async {
+                    handlerResult(uiHandler, nil)
+                }
+                break
             case let .failure(error):
-                handlerResult(nil, error)
-                configuration.onError()
+                DispatchQueue.main.async {
+                    handlerResult(nil, error)
+                    configuration.onError()
+                }
+                break
             }
         }
     }

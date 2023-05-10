@@ -18,8 +18,11 @@ extension PresentationUIHandler {
     }
 
     func presentWebView(bankId: String, animated: Bool) {
-        let viewControllers = [buildWebView()]
-        mainNavigationController.setViewControllers(viewControllers, animated: animated)
+        guard let webView = try? buildWebView(bankId: bankId) else {
+            print("Getivy: Error loading web view")
+            return
+        }
+        mainNavigationController.setViewControllers([webView], animated: animated)
     }
 
     func presentLanguagesView(over view: UIView) {

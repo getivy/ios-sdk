@@ -1,5 +1,6 @@
 import Foundation
 
-struct ListBanksRequest: Codable {
+struct ListBanksRequest: Encodable {
     var group: String?
+    let capability = "ais"
 }
