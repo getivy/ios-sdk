@@ -9,8 +9,4 @@ enum DataSessionApiRoute: ApiRoute { case
         case .retrieve: return "api/service/data/session/details"
         }
     }
-
-    func url(for environment: Environment) -> URL? {
-        URL(string: "\(environment.url)/\(path)")
-    }
 }

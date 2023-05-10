@@ -4,7 +4,7 @@ typealias RetrieveDataSessionResponse = (Result<GetDataSessionResponse, Error>) 
 
 protocol DataSessionService {
     func retrieveDataSession(
-        route: ApiRoute,
+        route: DataSessionApiRoute,
         params: GetDataSessionRequest,
         completion: @escaping RetrieveDataSessionResponse
     )

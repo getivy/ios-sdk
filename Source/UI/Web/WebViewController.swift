@@ -6,6 +6,8 @@ class WebViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        view.backgroundColor = .white
+
         // Create a label and set its properties
         let label = UILabel()
         label.text = "Web view"
