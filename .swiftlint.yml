@@ -34,7 +34,7 @@ opt_in_rules:
   - operator_usage_whitespace
   - overridden_super_call
   - override_in_extension
-  - no_magic_numbers
+#  - no_magic_numbers
   - pattern_matching_keywords
   - prefer_zero_over_explicit_init
   - prohibited_super_call

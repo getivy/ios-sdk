@@ -1,17 +1,31 @@
-import Foundation
 import UIKit
 
-class PresentationUIHandler: NSObject, UIHandler {
-    func openUI(
-        viewController _: UIViewController,
-        onSuccess _: () -> Void,
-        onError _: () -> Void
-    ) {}
+class PresentationUIHandler: NSObject {
+    var mainNavigationController = UINavigationController()
+    var bankId: String?
 
-    func openUI(
-        presentationCosure _: ViewControllerClosure,
-        dismissalClosure _: DismissalClosure = { $0.presentingViewController?.dismiss(animated: true, completion: nil) },
-        onSuccess _: () -> Void,
-        onError _: () -> Void
-    ) {}
+    let config: GetivyConfiguration
+
+    var dismissalHandler: DismissalClosure?
+
+    init(config: GetivyConfiguration, bankId: String?) {
+        self.bankId = bankId
+        self.config = config
+
+        super.init()
+
+        mainNavigationController.setNavigationBarHidden(true, animated: false)
+        startFlow()
+    }
+
+    func startFlow() {
+        if let bankId {
+            presentWebView(
+                bankId: bankId,
+                animated: false
+            )
+        } else {
+            presentBankView(animated: false)
+        }
+    }
 }

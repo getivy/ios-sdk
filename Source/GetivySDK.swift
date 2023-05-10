@@ -1,39 +1,65 @@
-import Foundation
+import UIKit
 
 @objc
 public final class GetivySDK: NSObject {
     @objc
     public static let shared = GetivySDK()
 
-    private let api = DataSessionApiService(
-        context: NonPersistentApiContext(environment: .production),
-        session: URLSession.shared,
-        parser: GetDataSessionResponseParser()
-    )
+    private let api: DataSessionApiService
 
-    override private init() { super.init() }
+    override private init() {
+        api = DataSessionApiService(
+            context: NonPersistentApiContext(environment: .production),
+            session: URLSession.shared,
+            parser: DataSessionResponseParser()
+        )
+        super.init()
+
+        registerFonts()
+    }
+
+    func registerFonts() {
+        UIFont.ivy_registerFont(withFilenameString: "GraphikRegular.otf")
+        UIFont.ivy_registerFont(withFilenameString: "GraphikSemibold.otf")
+        UIFont.ivy_registerFont(withFilenameString: "Inter-Regular.otf")
+    }
 
     @objc
     public func initializeHandler(
-        id: String,
-        environment: Environment,
-        completion: @escaping (UIHandler?, Error?) -> Void
+        configuration: GetivyConfiguration,
+        handlerResult: @escaping (UIHandler?, Error?) -> Void
     ) {
-        api.context.environment = environment
+        api.context.environment = configuration.environment
 
-        let request = GetDataSessionRequest(id: id)
+        let request = GetDataSessionRequest(id: configuration.dataSessionId)
         api.retrieveDataSession(
             route: DataSessionApiRoute.retrieve,
             params: request
-        ) { result in
+        ) { [weak self] result in
             switch result {
             case let .success(result):
-                let uiHandler = PresentationUIHandler()
-                completion(uiHandler, nil)
+
+                self?.changeLanguageIfNeeded(response: result)
+
+                let uiHandler = PresentationUIHandler(config: configuration, bankId: result.prefill.bankId)
+                handlerResult(uiHandler, nil)
 
             case let .failure(error):
-                completion(nil, error)
+                handlerResult(nil, error)
+                configuration.onError()
             }
         }
+    }
+
+    func changeLanguageIfNeeded(response: GetDataSessionResponse) {
+        if getLocale() != nil {
+            return
+        }
+
+        setLocale(code:
+            response.locale ??
+                Locale.current.languageCode ??
+                Languages.english.rawValue
+        )
     }
 }
