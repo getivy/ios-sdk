@@ -4,8 +4,8 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     var banks: [BankDetails] = []
     var filteredBanks: [BankDetails] = []
 
-    var router: PresentationUIHandler?
-    var banksService: BanksApiService?
+    var router: PresentationUIHandler!
+    var banksService: BanksApiService!
     var group: String?
 
     @IBOutlet var noResultsSubtitle: UILabel!
@@ -25,9 +25,9 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
 
-        languageChanged()
-
         setupView()
+        
+        languageChanged()
 
         if group != nil {
             sendBanksRequest()
@@ -39,7 +39,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     func sendSearchRequest() {
         banksService?.search(
             route: .search,
-            params: SearchBanksRequest(search: searchBar.text ?? "", market: "DE"),
+            params: SearchBanksRequest(search: searchBar.text ?? "", market: router.market),
             completion: { [weak self] result in
                 switch result {
                 case let .success(banks):

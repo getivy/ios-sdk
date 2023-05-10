@@ -15,6 +15,7 @@ final class BanksResponseParser {
         do {
             return try decoder.decode(SearchBanksResponse.self, from: data)
         } catch {
+            print(error)
             throw GetivySDKError.invalidSearchBanksListResponse
         }
     }

@@ -5,6 +5,7 @@ struct GetDataSessionResponse: Codable {
     let status: String
     var locale: String?
     let prefill: BankInformation
+    let market: String
 }
 
 struct BankInformation: Codable {

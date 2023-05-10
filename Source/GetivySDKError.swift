@@ -13,3 +13,6 @@ public enum GetivySDKError: Error {
     case couldNotLoadViewFromStoryboard
     case webViewLoadedWithoutBankId
 }
+
+
+// 2. Return some errors prefixed with something to mean ios to client

@@ -20,6 +20,8 @@ class BankTableViewCell: UITableViewCell {
                               size: CGSize(width: imageSize, height: imageSize),
                               textColor: .white,
                               font: UIFont(name: "Graphik-Regular", size: fontSizeForLetter) ?? UIFont())
-        logoImageView.load(url: URL(string: item.logo))
+        if let logo = item.logo {
+            logoImageView.load(url: URL(string: logo))
+        }
     }
 }

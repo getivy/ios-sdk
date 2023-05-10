@@ -1,3 +1,3 @@
-struct SearchBanksResponse: Codable {
+struct SearchBanksResponse: Decodable {
     let banks: [BankDetails]
 }

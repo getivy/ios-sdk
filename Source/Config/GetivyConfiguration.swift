@@ -1,6 +1,6 @@
 import Foundation
 
-public typealias SuccessCallback = () -> Void
+public typealias SuccessCallback = (_ result: Details) -> Void
 
 public typealias ErrorCallback = () -> Void
 
