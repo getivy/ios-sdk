@@ -9,9 +9,9 @@ class PresentationUIHandler: NSObject {
     var mainNavigationController = UINavigationController()
     var bankId: String?
     var market: String
-    
+
     var presentationStyle = PresentationStyle.simple
-    
+
     let config: GetivyConfiguration
 
     var dismissalHandler: DismissalClosure?
@@ -37,24 +37,19 @@ class PresentationUIHandler: NSObject {
             presentBankView(animated: false)
         }
     }
-    
+
     func handleWebResult(result: WebResult) {
-        
         if presentationStyle == .simple {
             mainNavigationController.dismiss(animated: true)
-        }
-        else {
+        } else {
             dismissalHandler?(mainNavigationController)
         }
-        
+
         if result.value == .success {
             let details = SuccessDetails(referenceId: result.referenceId, dataSessionId: result.dataId)
             config.onSuccess(details)
-        }
-        else {
+        } else {
             config.onError()
         }
-        
-        
     }
 }

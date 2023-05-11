@@ -23,6 +23,7 @@
 		405339BE2A0936DE000F4E3D /* GraphikSemibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 405339BD2A0936DD000F4E3D /* GraphikSemibold.otf */; };
 		405339C12A09372B000F4E3D /* UIFont + CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */; };
 		405339C32A0937AA000F4E3D /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 405339C22A0937AA000F4E3D /* GraphikRegular.otf */; };
+		40771D582A0D2F8300D9C1E2 /* WebResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40771D572A0D2F8200D9C1E2 /* WebResult.swift */; };
 		4082F1E52A095CD30037F6B6 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */; };
 		4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */; };
 		4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */; };
@@ -92,6 +93,7 @@
 		405339BD2A0936DD000F4E3D /* GraphikSemibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikSemibold.otf; sourceTree = "<group>"; };
 		405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + CustomFonts.swift"; sourceTree = "<group>"; };
 		405339C22A0937AA000F4E3D /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
+		40771D572A0D2F8200D9C1E2 /* WebResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebResult.swift; sourceTree = "<group>"; };
 		4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMuttableAttributedString+Link.swift"; sourceTree = "<group>"; };
 		4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
@@ -383,6 +385,7 @@
 		40F64E502A054E73006A6DAC /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				40771D572A0D2F8200D9C1E2 /* WebResult.swift */,
 				40F64E512A054E92006A6DAC /* WebViewController.swift */,
 				40EA003D2A0A887C00715BF0 /* WebView.storyboard */,
 			);
@@ -580,6 +583,7 @@
 				40EA003C2A0A821700715BF0 /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				404E27F92A098C04009365CA /* BanksApiService.swift in Sources */,
 				404E27FD2A09985D009365CA /* UIImageView+URL.swift in Sources */,
+				40771D582A0D2F8300D9C1E2 /* WebResult.swift in Sources */,
 				404E27F12A098A98009365CA /* BanksService.swift in Sources */,
 				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
 				4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */,
