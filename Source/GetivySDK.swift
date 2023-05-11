@@ -49,13 +49,11 @@ public final class GetivySDK: NSObject {
                 DispatchQueue.main.async {
                     handlerResult(uiHandler, nil)
                 }
-                break
             case let .failure(error):
                 DispatchQueue.main.async {
                     handlerResult(nil, error)
                     configuration.onError()
                 }
-                break
             }
         }
     }

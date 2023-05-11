@@ -1,6 +1,7 @@
+import Foundation
 
 @objc
 public protocol Details {
-     var referenceId: String { get }
-     var dataSessionId: String { get }
+    var referenceId: String { get }
+    var dataSessionId: String { get }
 }

@@ -26,7 +26,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
 
         setupView()
-        
+
         languageChanged()
 
         if group != nil {
@@ -37,9 +37,12 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func sendSearchRequest() {
+        let searchQuery = searchBar.text ?? ""
+        let market = searchQuery.isEmpty ? router.market : nil
+
         banksService?.search(
             route: .search,
-            params: SearchBanksRequest(search: searchBar.text ?? "", market: router.market),
+            params: SearchBanksRequest(search: searchQuery, market: market),
             completion: { [weak self] result in
                 switch result {
                 case let .success(banks):
