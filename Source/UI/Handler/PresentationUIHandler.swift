@@ -52,4 +52,16 @@ class PresentationUIHandler: NSObject {
             config.onError()
         }
     }
+
+    func close() {
+        let result = WebResult(
+            dataId: "",
+            referenceId: "",
+            source: .ivy,
+            type: .sdk,
+            value: .error
+        )
+
+        handleWebResult(result: result)
+    }
 }
