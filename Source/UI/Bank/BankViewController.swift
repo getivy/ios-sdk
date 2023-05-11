@@ -8,6 +8,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     var banksService: BanksApiService!
     var group: String?
 
+    @IBOutlet var closeButton: UIButton!
     @IBOutlet var noResultsSubtitle: UILabel!
     @IBOutlet var noResultsTitle: UILabel!
     @IBOutlet var noResultsContainerView: UIView!
@@ -82,6 +83,9 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         let semiBold = UIFont(name: "Graphik-Semibold", size: titleSize)
         let regular = UIFont(name: "Graphik-Regular", size: searchSize)
 
+        closeButton.imageView?.contentMode = .scaleAspectFit
+        closeButton.setTitle("", for: .normal)
+
         noResultsTitle.textColor = UIColor(hexString: "#252525")
         noResultsTitle.font = semiBold
         noResultsSubtitle.textColor = UIColor(hexString: "#717171")
@@ -116,6 +120,10 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBAction
     func didPressBack(_ sender: UIButton) {
         router?.goBack()
+    }
+
+    @IBAction func didPressCloseButton(_ sender: UIButton) {
+        router.close()
     }
 
     @objc

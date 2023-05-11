@@ -145,21 +145,36 @@
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="999" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O8D-Xr-M35">
-                                        <rect key="frame" x="32" y="0.0" width="329" height="24"/>
+                                        <rect key="frame" x="32" y="0.0" width="229" height="24"/>
                                         <string key="text">Wähle deine Bank
 </string>
                                         <fontDescription key="fontDescription" name="Graphik-Semibold" family="Graphik" pointSize="19"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x9-7E-aCb">
+                                        <rect key="frame" x="337" y="0.0" width="24" height="24"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="O6d-iE-cDr"/>
+                                            <constraint firstAttribute="width" constant="24" id="c5N-3W-CDC"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" image="close-icon"/>
+                                        <connections>
+                                            <action selector="didPressCloseButton:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="Xs6-BB-WPJ"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
+                                    <constraint firstItem="1x9-7E-aCb" firstAttribute="top" secondItem="AKc-VQ-ity" secondAttribute="top" id="1il-0z-RPr"/>
                                     <constraint firstItem="O8D-Xr-M35" firstAttribute="top" secondItem="AKc-VQ-ity" secondAttribute="top" id="50u-H6-v8s"/>
                                     <constraint firstAttribute="bottom" secondItem="O8D-Xr-M35" secondAttribute="bottom" id="58y-Co-k4t"/>
                                     <constraint firstItem="O8D-Xr-M35" firstAttribute="leading" secondItem="rtw-fV-1ON" secondAttribute="trailing" constant="16" id="9hc-wo-y6j"/>
+                                    <constraint firstItem="1x9-7E-aCb" firstAttribute="leading" secondItem="O8D-Xr-M35" secondAttribute="trailing" constant="76" id="Fb1-zt-QfZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="1x9-7E-aCb" secondAttribute="trailing" id="Kfw-GJ-DEz"/>
+                                    <constraint firstAttribute="bottom" secondItem="1x9-7E-aCb" secondAttribute="bottom" id="LRV-Uj-TyZ"/>
                                     <constraint firstItem="rtw-fV-1ON" firstAttribute="leading" secondItem="AKc-VQ-ity" secondAttribute="leading" id="Ol8-MG-tx8"/>
-                                    <constraint firstAttribute="trailing" secondItem="O8D-Xr-M35" secondAttribute="trailing" id="Z1H-LM-br5"/>
                                     <constraint firstItem="rtw-fV-1ON" firstAttribute="top" secondItem="AKc-VQ-ity" secondAttribute="top" constant="4" id="cmk-3I-NDT"/>
                                     <constraint firstAttribute="bottom" secondItem="rtw-fV-1ON" secondAttribute="bottom" constant="4" id="vs7-MU-Eur"/>
                                 </constraints>
@@ -219,6 +234,7 @@
                             <constraint firstItem="TT2-k4-EOF" firstAttribute="trailing" secondItem="fUF-EW-Cp7" secondAttribute="trailing" id="NT7-Vc-xxp"/>
                             <constraint firstItem="63Y-uN-dLC" firstAttribute="top" secondItem="TWb-Eu-NYL" secondAttribute="top" id="QIR-sr-IXj"/>
                             <constraint firstItem="TT2-k4-EOF" firstAttribute="top" secondItem="fUF-EW-Cp7" secondAttribute="bottom" constant="20" id="QpK-rG-ncU"/>
+                            <constraint firstItem="RhX-zt-THN" firstAttribute="trailing" secondItem="AKc-VQ-ity" secondAttribute="trailing" id="Sjt-7u-lny"/>
                             <constraint firstItem="TWb-Eu-NYL" firstAttribute="top" secondItem="RhX-zt-THN" secondAttribute="bottom" constant="20" id="ZPu-zA-N8I"/>
                             <constraint firstItem="GMN-ul-Kht" firstAttribute="trailing" secondItem="TT2-k4-EOF" secondAttribute="trailing" id="ahQ-tq-rvI"/>
                             <constraint firstItem="AKc-VQ-ity" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="24" id="dl7-Vp-rUC"/>
@@ -230,7 +246,6 @@
                             <constraint firstItem="63Y-uN-dLC" firstAttribute="bottom" secondItem="TWb-Eu-NYL" secondAttribute="bottom" id="hQ6-cO-mSc"/>
                             <constraint firstItem="GMN-ul-Kht" firstAttribute="leading" secondItem="TT2-k4-EOF" secondAttribute="leading" id="nAr-kD-FIe"/>
                             <constraint firstItem="RhX-zt-THN" firstAttribute="leading" secondItem="rtw-fV-1ON" secondAttribute="leading" id="nrV-Dd-oxF"/>
-                            <constraint firstItem="RhX-zt-THN" firstAttribute="trailing" secondItem="O8D-Xr-M35" secondAttribute="trailing" id="pNc-Wk-n0Z"/>
                             <constraint firstItem="63Y-uN-dLC" firstAttribute="trailing" secondItem="TWb-Eu-NYL" secondAttribute="trailing" id="w4j-bp-08c"/>
                             <constraint firstItem="fUF-EW-Cp7" firstAttribute="trailing" secondItem="TWb-Eu-NYL" secondAttribute="trailing" id="zJJ-4l-dh6"/>
                         </constraints>
@@ -238,6 +253,7 @@
                     <connections>
                         <outlet property="backButton" destination="rtw-fV-1ON" id="Lz9-mG-WMI"/>
                         <outlet property="backButtonWidthConstraint" destination="CnG-0Y-DOv" id="aEz-L8-Pzq"/>
+                        <outlet property="closeButton" destination="1x9-7E-aCb" id="01s-cF-EKT"/>
                         <outlet property="disclaimerTextView" destination="fUF-EW-Cp7" id="lWz-3T-x6X"/>
                         <outlet property="languageButton" destination="9NG-gC-hYJ" id="c1k-UK-kTs"/>
                         <outlet property="noResultsContainerView" destination="63Y-uN-dLC" id="R2W-aQ-O6e"/>
@@ -251,12 +267,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="130.53435114503816" y="-27.464788732394368"/>
+            <point key="canvasLocation" x="123" y="-49"/>
         </scene>
     </scenes>
     <resources>
         <image name="Germany" width="33.333332061767578" height="22.666666030883789"/>
         <image name="back_icon" width="21.333333969116211" height="21.333333969116211"/>
+        <image name="close-icon" width="24" height="24"/>
         <image name="logo-dark" width="46" height="20"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -26,6 +26,13 @@ class WebViewController: UIViewController {
         print(url)
         let request = URLRequest(url: url)
         webView.load(request)
+
+        // Needed for web view to be inspectable in debug
+        #if DEBUG
+        if #available(iOS 16.4, *) {
+            webView.isInspectable = true
+        }
+        #endif
     }
 }
 
