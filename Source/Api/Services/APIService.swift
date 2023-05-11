@@ -44,7 +44,14 @@ class ApiService {
             return
         }
         cancel()
-        task = session.dataTask(with: request, completionHandler: completion)
+        task = session.dataTask(with: request, completionHandler: { data, response, error in
+            if let error, (error as NSError).code == NSURLErrorCancelled {
+                // Intercept cancelled errors and mute
+                return
+            }
+
+            completion(data, response, error)
+        })
         task?.resume()
     }
 
