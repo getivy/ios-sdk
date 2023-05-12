@@ -2,7 +2,7 @@ import Foundation
 
 public typealias SuccessCallback = (_ result: Details) -> Void
 
-public typealias ErrorCallback = () -> Void
+public typealias ErrorCallback = (_ error: Error?) -> Void
 
 @objcMembers
 public

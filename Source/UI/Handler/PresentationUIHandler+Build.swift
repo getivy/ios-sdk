@@ -5,7 +5,7 @@ extension PresentationUIHandler {
         let storyboard = UIStoryboard(name: "BankView", bundle: Bundle(for: PresentationUIHandler.self))
 
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "BankViewController") as? BankViewController else {
-            throw GetivySDKError.couldNotLoadViewFromStoryboard
+            throw GetivySDKNonRecoverableError.couldNotLoadViewFromStoryboard
         }
 
         viewController.banksService = BanksApiService(
@@ -22,7 +22,7 @@ extension PresentationUIHandler {
         let storyboard = UIStoryboard(name: "WebView", bundle: Bundle(for: PresentationUIHandler.self))
 
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "WebViewController") as? WebViewController else {
-            throw GetivySDKError.couldNotLoadViewFromStoryboard
+            throw GetivySDKNonRecoverableError.couldNotLoadViewFromStoryboard
         }
 
         viewController.bankId = bankId
@@ -35,7 +35,7 @@ extension PresentationUIHandler {
         let storyboard = UIStoryboard(name: "LanguagesView", bundle: Bundle(for: PresentationUIHandler.self))
 
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "LanguagesViewController") as? LanguagesViewController else {
-            throw GetivySDKError.couldNotLoadViewFromStoryboard
+            throw GetivySDKNonRecoverableError.couldNotLoadViewFromStoryboard
         }
 
         return viewController

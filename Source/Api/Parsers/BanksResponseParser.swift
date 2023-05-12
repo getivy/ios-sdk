@@ -6,7 +6,7 @@ final class BanksResponseParser {
         do {
             return try decoder.decode(ListBanksResponse.self, from: data)
         } catch {
-            throw GetivySDKError.invalidListBanksListResponse
+            throw GetivySDKRecoverableError.invalidListBanksListResponse
         }
     }
 
@@ -15,8 +15,7 @@ final class BanksResponseParser {
         do {
             return try decoder.decode(SearchBanksResponse.self, from: data)
         } catch {
-            print(error)
-            throw GetivySDKError.invalidSearchBanksListResponse
+            throw GetivySDKRecoverableError.invalidSearchBanksListResponse
         }
     }
 }
