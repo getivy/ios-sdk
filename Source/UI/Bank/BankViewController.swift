@@ -52,6 +52,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self?.reloadData()
                 case let .failure(error):
                     print("GetivySDK: Error getting banks search: ", error)
+                    self?.validate(error: error)
                 }
             }
         )
@@ -69,9 +70,18 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
                     self?.reloadData()
                 case let .failure(error):
                     print("GetivySDK: Error getting banks list: ", error)
+                    self?.validate(error: error)
                 }
             }
         )
+    }
+
+    func validate(error: Error) {
+        if let hardError = error as? GetivySDKNonRecoverableError {
+            DispatchQueue.main.async { [weak self] in
+                self?.router.closeWithNonRecoverable(error: error)
+            }
+        }
     }
 
     func setupView() {
