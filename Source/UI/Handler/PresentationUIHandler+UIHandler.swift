@@ -5,12 +5,14 @@ extension PresentationUIHandler: UIHandler {
         viewController: UIViewController
     ) {
         presentationStyle = .simple
+        mainNavigationController.modalPresentationStyle = .overFullScreen
+        mainNavigationController.modalTransitionStyle = .coverVertical
         viewController.present(mainNavigationController, animated: true)
     }
 
     func openUI(
         presentationCosure: ViewControllerClosure,
-        dismissalClosure: @escaping DismissalClosure = { $0.presentingViewController?.dismiss(animated: true, completion: nil) }
+        dismissalClosure: @escaping DismissalClosure
     ) {
         presentationStyle = .custom
         presentationCosure(mainNavigationController)
