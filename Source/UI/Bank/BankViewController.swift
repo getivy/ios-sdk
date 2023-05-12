@@ -123,7 +123,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func didPressCloseButton(_ sender: UIButton) {
-        router.close()
+        router.closeWithNonRecoverable(error: GetivySDKNonRecoverableError.userClosedFlow)
     }
 
     @objc

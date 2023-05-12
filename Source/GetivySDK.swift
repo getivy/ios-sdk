@@ -52,7 +52,6 @@ public final class GetivySDK: NSObject {
             case let .failure(error):
                 DispatchQueue.main.async {
                     handlerResult(nil, error)
-                    configuration.onError()
                 }
             }
         }

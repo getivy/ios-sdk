@@ -30,7 +30,7 @@ class ApiService {
         completion: @escaping PostResult
     ) {
         guard let url = route.url(for: context.environment) else {
-            completion(nil, nil, GetivySDKError.couldNotConstructFullUrlForEnvironment)
+            completion(nil, nil, GetivySDKNonRecoverableError.couldNotConstructFullUrlForEnvironment)
             return
         }
         var request = URLRequest(url: url)
@@ -40,7 +40,7 @@ class ApiService {
             let jsonData = try JSONEncoder().encode(parameters)
             request.httpBody = jsonData
         } catch {
-            completion(nil, nil, GetivySDKError.failedToEncodeRequest)
+            completion(nil, nil, GetivySDKNonRecoverableError.failedToEncodeRequest)
             return
         }
         cancel()

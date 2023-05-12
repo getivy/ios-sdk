@@ -39,29 +39,26 @@ class PresentationUIHandler: NSObject {
     }
 
     func handleWebResult(result: WebResult) {
-        if presentationStyle == .simple {
-            mainNavigationController.dismiss(animated: true)
-        } else {
-            dismissalHandler?(mainNavigationController)
-        }
+        dismissUI()
 
         if result.value == .success {
             let details = SuccessDetails(referenceId: result.referenceId, dataSessionId: result.dataId)
             config.onSuccess(details)
         } else {
-            config.onError()
+            config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
         }
     }
 
-    func close() {
-        let result = WebResult(
-            dataId: "",
-            referenceId: "",
-            source: .ivy,
-            type: .sdk,
-            value: .error
-        )
+    func dismissUI() {
+        if presentationStyle == .simple {
+            mainNavigationController.dismiss(animated: true)
+        } else {
+            dismissalHandler?(mainNavigationController)
+        }
+    }
 
-        handleWebResult(result: result)
+    func closeWithNonRecoverable(error: Error) {
+        dismissUI()
+        config.onError(error)
     }
 }

@@ -6,7 +6,7 @@ final class DataSessionResponseParser {
         do {
             return try decoder.decode(GetDataSessionResponse.self, from: data)
         } catch {
-            throw GetivySDKError.invalidGetSessionDetailsResponse
+            throw GetivySDKNonRecoverableError.invalidGetSessionDetailsResponse
         }
     }
 }

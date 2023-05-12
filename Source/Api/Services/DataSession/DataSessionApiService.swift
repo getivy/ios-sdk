@@ -24,7 +24,7 @@ final class DataSessionApiService: ApiService, DataSessionService {
         ) { data, _, _ in
             guard let data else {
                 DispatchQueue.main.async {
-                    completion(.failure(GetivySDKError.sessionVerificationFailed))
+                    completion(.failure(GetivySDKRecoverableError.serverResponseWithNoData))
                 }
                 return
             }
