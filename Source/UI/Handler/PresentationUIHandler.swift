@@ -76,7 +76,11 @@ class PresentationUIHandler: NSObject {
         dismissUI()
 
         if result.value == .success {
-            let details = SuccessDetails(referenceId: result.referenceId, dataSessionId: result.dataId)
+            guard let refId = result.referenceId, let dataSessionId = result.dataId else {
+                config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
+                return
+            }
+            let details = SuccessDetails(referenceId: refId, dataSessionId: dataSessionId)
             config.onSuccess(details)
         } else {
             config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
