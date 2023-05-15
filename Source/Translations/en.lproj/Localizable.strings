@@ -3,3 +3,4 @@
 "bankDisclaimer" = "By choosing your bank above you agree to Ivy's Terms, Privacy Policy and Cookie Policy.";
 "noBanksFoundTitle" = "No search results found.";
 "noBanksFoundMessage" = "Please try another search query.";
+"cancel" = "Cancel";

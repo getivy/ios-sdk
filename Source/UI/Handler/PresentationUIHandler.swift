@@ -14,17 +14,51 @@ class PresentationUIHandler: NSObject {
 
     let config: GetivyConfiguration
 
+    let closeButton: UIButton
+
     var dismissalHandler: DismissalClosure?
 
     init(config: GetivyConfiguration, bankId: String?, market: String) {
         self.bankId = bankId
         self.config = config
         self.market = market
+        closeButton = UIButton(type: .custom)
 
         super.init()
 
-        mainNavigationController.setNavigationBarHidden(true, animated: false)
+        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
+
+        setupView()
+        languageChanged()
         startFlow()
+    }
+
+    func setupView() {
+        mainNavigationController.setNavigationBarHidden(true, animated: false)
+        mainNavigationController.view.addSubview(closeButton)
+        closeButton.translatesAutoresizingMaskIntoConstraints = false
+        closeButton.addTarget(self, action: #selector(didPressClose), for: .touchUpInside)
+        closeButton.setTitleColor(.black, for: .normal)
+
+        let margin: CGFloat = 16
+        closeButton.isHidden = true
+
+        NSLayoutConstraint.activate([
+            closeButton.topAnchor.constraint(equalTo: mainNavigationController.view.safeAreaLayoutGuide.topAnchor, constant: margin),
+            closeButton.trailingAnchor.constraint(equalTo: mainNavigationController.view.trailingAnchor, constant: -margin),
+        ])
+    }
+
+    @objc
+    func didPressClose() {
+        closeWithNonRecoverable(error: GetivySDKNonRecoverableError.flowNotSuccessful)
+    }
+
+    @objc
+    func languageChanged() {
+        let language = Languages(rawValue: getLocale() ?? Languages.english.rawValue) ?? .english
+        let closeTitle = "cancel".localized(language: language)
+        closeButton.setTitle(closeTitle, for: .normal)
     }
 
     func startFlow() {
@@ -46,14 +80,6 @@ class PresentationUIHandler: NSObject {
             config.onSuccess(details)
         } else {
             config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
-        }
-    }
-
-    func dismissUI() {
-        if presentationStyle == .simple {
-            mainNavigationController.dismiss(animated: true)
-        } else {
-            dismissalHandler?(mainNavigationController)
         }
     }
 }

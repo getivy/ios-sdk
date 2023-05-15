@@ -45,4 +45,12 @@ extension PresentationUIHandler {
         dismissUI()
         config.onError(error)
     }
+
+    func dismissUI() {
+        if presentationStyle == .simple {
+            mainNavigationController.dismiss(animated: true)
+        } else {
+            dismissalHandler?(mainNavigationController)
+        }
+    }
 }
