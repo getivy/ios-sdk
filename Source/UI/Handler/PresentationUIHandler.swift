@@ -56,9 +56,4 @@ class PresentationUIHandler: NSObject {
             dismissalHandler?(mainNavigationController)
         }
     }
-
-    func closeWithNonRecoverable(error: Error) {
-        dismissUI()
-        config.onError(error)
-    }
 }
