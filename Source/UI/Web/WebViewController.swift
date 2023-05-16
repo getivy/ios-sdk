@@ -9,6 +9,12 @@ class WebViewController: UIViewController {
     var bankId: String!
     var router: PresentationUIHandler!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        router.closeButton.isHidden = false
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,7 +29,7 @@ class WebViewController: UIViewController {
         guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
             return
         }
-        print(url)
+
         let request = URLRequest(url: url)
         webView.load(request)
 

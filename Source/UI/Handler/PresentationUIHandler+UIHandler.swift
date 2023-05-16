@@ -4,6 +4,8 @@ extension PresentationUIHandler: UIHandler {
     func openUI(
         viewController: UIViewController
     ) {
+        startFlow()
+
         presentationStyle = .simple
         mainNavigationController.modalPresentationStyle = .overFullScreen
         mainNavigationController.modalTransitionStyle = .coverVertical
@@ -14,6 +16,8 @@ extension PresentationUIHandler: UIHandler {
         presentationCosure: ViewControllerClosure,
         dismissalClosure: @escaping DismissalClosure
     ) {
+        startFlow()
+
         presentationStyle = .custom
         presentationCosure(mainNavigationController)
         dismissalHandler = dismissalClosure

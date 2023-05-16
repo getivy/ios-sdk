@@ -21,6 +21,12 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var languageButton: UIButton!
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        router.closeButton.isHidden = true
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -129,11 +135,11 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @IBAction
     func didPressBack(_ sender: UIButton) {
-        router?.goBack()
+        router.goBack()
     }
 
     @IBAction func didPressCloseButton(_ sender: UIButton) {
-        router.closeWithNonRecoverable(error: GetivySDKNonRecoverableError.userClosedFlow)
+        router.closeWithNonRecoverable(error: GetivySDKNonRecoverableError.flowNotSuccessful)
     }
 
     @objc

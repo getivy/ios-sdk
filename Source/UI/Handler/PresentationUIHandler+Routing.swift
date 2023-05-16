@@ -40,4 +40,17 @@ extension PresentationUIHandler {
     func goBack() {
         mainNavigationController.popViewController(animated: true)
     }
+
+    func closeWithNonRecoverable(error: Error) {
+        dismissUI()
+        config.onError(error)
+    }
+
+    func dismissUI() {
+        if presentationStyle == .simple {
+            mainNavigationController.dismiss(animated: true)
+        } else {
+            dismissalHandler?(mainNavigationController)
+        }
+    }
 }

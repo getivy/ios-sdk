@@ -14,8 +14,8 @@ enum WebMessageOutcome: String, Decodable {
 }
 
 struct WebResult: Decodable {
-    let dataId: String
-    let referenceId: String
+    let dataId: String?
+    let referenceId: String?
     let source: WebMessageSource
     let type: WebMessageType
     let value: WebMessageOutcome
