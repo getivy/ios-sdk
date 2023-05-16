@@ -11,10 +11,10 @@ class WebViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+
         router.closeButton.isHidden = false
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -29,6 +29,9 @@ class WebViewController: UIViewController {
         guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
             return
         }
+
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
 
         let request = URLRequest(url: url)
         webView.load(request)
