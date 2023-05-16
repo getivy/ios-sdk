@@ -34,6 +34,7 @@
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
 		40C4B3DB2A13694B00BECD09 /* WebViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4B3DA2A13694B00BECD09 /* WebViewController+WKUIDelegate.swift */; };
 		40C4B3DD2A13696C00BECD09 /* WebViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4B3DC2A13696C00BECD09 /* WebViewController+WKNavigationDelegate.swift */; };
+		40C4B3E12A1373F700BECD09 /* WebViewController+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4B3E02A1373F700BECD09 /* WebViewController+WKScriptMessageHandler.swift */; };
 		40D093E32A01539800FBBB5A /* GetivySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D093D82A01539800FBBB5A /* GetivySDK.framework */; };
 		40E876382A03B0770013038E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762B2A03B0770013038E /* APIService.swift */; };
 		40E876392A03B0770013038E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762C2A03B0770013038E /* Environment.swift */; };
@@ -106,6 +107,7 @@
 		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
 		40C4B3DA2A13694B00BECD09 /* WebViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		40C4B3DC2A13696C00BECD09 /* WebViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
+		40C4B3E02A1373F700BECD09 /* WebViewController+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
 		40D093D82A01539800FBBB5A /* GetivySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetivySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D093E22A01539800FBBB5A /* GetivySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetivySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		40E8762B2A03B0770013038E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
@@ -389,6 +391,7 @@
 		40F64E502A054E73006A6DAC /* Web */ = {
 			isa = PBXGroup;
 			children = (
+				40C4B3E02A1373F700BECD09 /* WebViewController+WKScriptMessageHandler.swift */,
 				40771D572A0D2F8200D9C1E2 /* WebResult.swift */,
 				40F64E512A054E92006A6DAC /* WebViewController.swift */,
 				40EA003D2A0A887C00715BF0 /* WebView.storyboard */,
@@ -611,6 +614,7 @@
 				40EA003A2A0A809C00715BF0 /* BankTableViewCell.swift in Sources */,
 				404E27E82A0980EF009365CA /* String+Languages.swift in Sources */,
 				40E876392A03B0770013038E /* Environment.swift in Sources */,
+				40C4B3E12A1373F700BECD09 /* WebViewController+WKScriptMessageHandler.swift in Sources */,
 				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,
 				40F64E582A05524B006A6DAC /* PresentationUIHandler+Build.swift in Sources */,
 				40E876412A03B0770013038E /* DataSessionApiService.swift in Sources */,
