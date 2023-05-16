@@ -85,7 +85,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     func validate(error: Error) {
         if let hardError = error as? GetivySDKNonRecoverableError {
             DispatchQueue.main.async { [weak self] in
-                self?.router.closeWithNonRecoverable(error: error)
+                self?.router.closeWithNonRecoverable(error: hardError)
             }
         }
     }
