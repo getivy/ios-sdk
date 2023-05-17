@@ -17,7 +17,7 @@ class GetivyConfiguration: NSObject {
 
     public init(
         dataSessionId: String,
-        environment: Environment,
+        environment: Environment = .production,
         onSuccess: @escaping SuccessCallback,
         onError: @escaping ErrorCallback
     ) {
