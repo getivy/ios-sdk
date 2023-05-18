@@ -29,6 +29,8 @@
 		4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */; };
 		4082F1EC2A09661D0037F6B6 /* LanguagesView.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4082F1EB2A09661D0037F6B6 /* LanguagesView.storyboard */; };
 		4082F1EE2A096B990037F6B6 /* LanguagesViewController+Popover.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1ED2A096B990037F6B6 /* LanguagesViewController+Popover.swift */; };
+		40857EFD2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40857EFB2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift */; };
+		40857EFE2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40857EFC2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift */; };
 		409DAF802A0BEE95004346EF /* SuccessDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409DAF7E2A0BEE95004346EF /* SuccessDetails.swift */; };
 		409DAF812A0BEE95004346EF /* Details.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409DAF7F2A0BEE95004346EF /* Details.swift */; };
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
@@ -100,6 +102,8 @@
 		4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
 		4082F1EB2A09661D0037F6B6 /* LanguagesView.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LanguagesView.storyboard; sourceTree = "<group>"; };
 		4082F1ED2A096B990037F6B6 /* LanguagesViewController+Popover.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LanguagesViewController+Popover.swift"; sourceTree = "<group>"; };
+		40857EFB2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKNavigationDelegate.swift"; sourceTree = "<group>"; };
+		40857EFC2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKUIDelegate.swift"; sourceTree = "<group>"; };
 		409DAF7E2A0BEE95004346EF /* SuccessDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SuccessDetails.swift; sourceTree = "<group>"; };
 		409DAF7F2A0BEE95004346EF /* Details.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Details.swift; sourceTree = "<group>"; };
 		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
@@ -391,6 +395,8 @@
 				40F64E512A054E92006A6DAC /* WebViewController.swift */,
 				40EA003D2A0A887C00715BF0 /* WebView.storyboard */,
 				40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */,
+				40857EFB2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift */,
+				40857EFC2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift */,
 			);
 			path = Web;
 			sourceTree = "<group>";
@@ -567,7 +573,9 @@
 			files = (
 				4082F1EE2A096B990037F6B6 /* LanguagesViewController+Popover.swift in Sources */,
 				40F64E542A0551BA006A6DAC /* PresentationUIHandler+Routing.swift in Sources */,
+				40857EFE2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift in Sources */,
 				4015C6C02A0972030000B0CE /* Utils.swift in Sources */,
+				40857EFD2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift in Sources */,
 				40E8763B2A03B0770013038E /* GetivySDK.swift in Sources */,
 				40EA00402A0A8A3F00715BF0 /* WebViewApiRoute.swift in Sources */,
 				404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */,
