@@ -30,6 +30,9 @@ class WebViewController: UIViewController {
             return
         }
 
+        webView.navigationDelegate = self
+        webView.uiDelegate = self
+
         let request = URLRequest(url: url)
         webView.load(request)
 

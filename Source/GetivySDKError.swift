@@ -13,4 +13,5 @@ public enum GetivySDKNonRecoverableError: Error {
     case failedToEncodeRequest
     case couldNotLoadViewFromStoryboard
     case flowNotSuccessful
+    case featureWantedExternalBrowser
 }
