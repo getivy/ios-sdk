@@ -83,9 +83,9 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     func validate(error: Error) {
-        if let hardError = error as? GetivySDKNonRecoverableError {
+        if let sdkError = error as? SDKErrorImpl {
             DispatchQueue.main.async { [weak self] in
-                self?.router.closeWithNonRecoverable(error: hardError)
+                self?.router.closeWithNonRecoverable(error: sdkError)
             }
         }
     }
@@ -139,7 +139,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
 
     @IBAction func didPressCloseButton(_ sender: UIButton) {
-        router.closeWithNonRecoverable(error: GetivySDKNonRecoverableError.flowNotSuccessful)
+        router.closeWithNonRecoverable(error: GetivySDKError.flowNotSuccessful)
     }
 
     @objc

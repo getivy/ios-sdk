@@ -2,7 +2,7 @@ import Foundation
 
 public typealias SuccessCallback = (_ result: Details) -> Void
 
-public typealias ErrorCallback = (_ error: Error?) -> Void
+public typealias ErrorCallback = (_ error: SDKError?) -> Void
 
 @objcMembers
 public
@@ -25,5 +25,16 @@ class GetivyConfiguration: NSObject {
         self.environment = environment
         self.onSuccess = onSuccess
         self.onError = onError
+    }
+
+    func validate() -> SDKErrorImpl? {
+        if dataSessionId.isEmpty {
+            return SDKErrorImpl(
+                code: SDKErrorCodes.missingDataSessionId.rawValue,
+                message: SDKErrorCodes.missingDataSessionId.message()
+            )
+        }
+
+        return nil
     }
 }

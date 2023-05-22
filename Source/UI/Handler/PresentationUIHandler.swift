@@ -51,7 +51,7 @@ class PresentationUIHandler: NSObject {
 
     @objc
     func didPressClose() {
-        closeWithNonRecoverable(error: GetivySDKNonRecoverableError.flowNotSuccessful)
+        closeWithNonRecoverable(error: GetivySDKError.flowNotSuccessful)
     }
 
     @objc
@@ -76,14 +76,15 @@ class PresentationUIHandler: NSObject {
         dismissUI()
 
         if result.value == .success {
-            guard let refId = result.referenceId, let dataSessionId = result.dataId else {
-                config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
-                return
-            }
-            let details = SuccessDetails(referenceId: refId, dataSessionId: dataSessionId)
+            let details = SuccessDetails(referenceId: result.referenceId, dataSessionId: result.dataId)
             config.onSuccess(details)
         } else {
-            config.onError(GetivySDKNonRecoverableError.flowNotSuccessful)
+            config.onError(
+                SDKErrorImpl(
+                    code: SDKErrorCodes.paymentFailed.rawValue,
+                    message: SDKErrorCodes.paymentFailed.message()
+                )
+            )
         }
     }
 }

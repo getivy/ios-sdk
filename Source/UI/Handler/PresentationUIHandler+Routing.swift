@@ -43,7 +43,11 @@ extension PresentationUIHandler {
 
     func closeWithNonRecoverable(error: Error) {
         dismissUI()
-        config.onError(error)
+        let sdkError = error as? SDKErrorImpl ?? SDKErrorImpl(
+            code: SDKErrorCodes.flowCancelled.rawValue,
+            message: SDKErrorCodes.flowCancelled.message()
+        )
+        config.onError(sdkError)
     }
 
     func dismissUI() {

@@ -24,7 +24,7 @@ final class BanksApiService: ApiService, BanksService {
         ) { data, _, _ in
             guard let data else {
                 DispatchQueue.main.async {
-                    completion(.failure(GetivySDKRecoverableError.serverResponseWithNoData))
+                    completion(.failure(GetivySDKError.serverResponseWithNoData))
                 }
                 return
             }
@@ -54,7 +54,7 @@ final class BanksApiService: ApiService, BanksService {
         ) { data, _, _ in
             guard let data else {
                 DispatchQueue.main.async {
-                    completion(.failure(GetivySDKRecoverableError.serverResponseWithNoData))
+                    completion(.failure(GetivySDKError.serverResponseWithNoData))
                 }
                 return
             }
