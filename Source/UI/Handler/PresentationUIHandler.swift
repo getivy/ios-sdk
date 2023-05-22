@@ -94,8 +94,8 @@ class PresentationUIHandler: NSObject {
         case .error:
             config.onError(
                 SDKErrorImpl(
-                    code: SDKErrorCodes.paymentFailed.rawValue,
-                    message: SDKErrorCodes.paymentFailed.message()
+                    code: SDKErrorCodes.flowFailed.rawValue,
+                    message: SDKErrorCodes.flowFailed.message()
                 )
             )
             dismissUI()
