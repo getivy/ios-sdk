@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		4015C6C02A0972030000B0CE /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4015C6BF2A0972030000B0CE /* Utils.swift */; };
 		4015C6C42A09771A0000B0CE /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4015C6C62A09771A0000B0CE /* Localizable.strings */; };
+		402A28342A1BE54F00A451F9 /* SDKError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A28312A1BE54F00A451F9 /* SDKError.swift */; };
+		402A28352A1BE54F00A451F9 /* SDKErrorCodes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A28322A1BE54F00A451F9 /* SDKErrorCodes.swift */; };
+		402A28362A1BE54F00A451F9 /* SDKErrorImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 402A28332A1BE54F00A451F9 /* SDKErrorImpl.swift */; };
 		404E27E82A0980EF009365CA /* String+Languages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E27E72A0980EF009365CA /* String+Languages.swift */; };
 		404E27ED2A0989D7009365CA /* BanksApiRoute.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E27EC2A0989D7009365CA /* BanksApiRoute.swift */; };
 		404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 404E27EE2A098A70009365CA /* ApiRoute+URL.swift */; };
@@ -80,6 +83,9 @@
 		4015C6C52A09771A0000B0CE /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4015C6C72A0977A80000B0CE /* nl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = nl; path = nl.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4015C6C82A0977B10000B0CE /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		402A28312A1BE54F00A451F9 /* SDKError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKError.swift; sourceTree = "<group>"; };
+		402A28322A1BE54F00A451F9 /* SDKErrorCodes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKErrorCodes.swift; sourceTree = "<group>"; };
+		402A28332A1BE54F00A451F9 /* SDKErrorImpl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SDKErrorImpl.swift; sourceTree = "<group>"; };
 		404E27E72A0980EF009365CA /* String+Languages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Languages.swift"; sourceTree = "<group>"; };
 		404E27EC2A0989D7009365CA /* BanksApiRoute.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BanksApiRoute.swift; sourceTree = "<group>"; };
 		404E27EE2A098A70009365CA /* ApiRoute+URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ApiRoute+URL.swift"; sourceTree = "<group>"; };
@@ -164,9 +170,20 @@
 			path = Translations;
 			sourceTree = "<group>";
 		};
+		402A28302A1BE54F00A451F9 /* Error */ = {
+			isa = PBXGroup;
+			children = (
+				402A28312A1BE54F00A451F9 /* SDKError.swift */,
+				402A28322A1BE54F00A451F9 /* SDKErrorCodes.swift */,
+				402A28332A1BE54F00A451F9 /* SDKErrorImpl.swift */,
+			);
+			path = Error;
+			sourceTree = "<group>";
+		};
 		404E27E42A097F94009365CA /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				402A28302A1BE54F00A451F9 /* Error */,
 				4015C6BF2A0972030000B0CE /* Utils.swift */,
 			);
 			path = Common;
@@ -573,6 +590,7 @@
 				404E27EF2A098A70009365CA /* ApiRoute+URL.swift in Sources */,
 				409DAF812A0BEE95004346EF /* Details.swift in Sources */,
 				40EA00362A0A64BF00715BF0 /* SearchBanksResponse.swift in Sources */,
+				402A28352A1BE54F00A451F9 /* SDKErrorCodes.swift in Sources */,
 				40EA00322A0A476F00715BF0 /* UIColor+Image.swift in Sources */,
 				404E27F32A098AE0009365CA /* ListBanksRequest.swift in Sources */,
 				40F64E522A054E92006A6DAC /* WebViewController.swift in Sources */,
@@ -587,6 +605,7 @@
 				40EA003C2A0A821700715BF0 /* UITableViewCell+ReuseIdentifier.swift in Sources */,
 				404E27F92A098C04009365CA /* BanksApiService.swift in Sources */,
 				404E27FD2A09985D009365CA /* UIImageView+URL.swift in Sources */,
+				402A28362A1BE54F00A451F9 /* SDKErrorImpl.swift in Sources */,
 				40771D582A0D2F8300D9C1E2 /* WebResult.swift in Sources */,
 				404E27F12A098A98009365CA /* BanksService.swift in Sources */,
 				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
@@ -604,6 +623,7 @@
 				4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */,
 				40E8763D2A03B0770013038E /* GetDataSessionRequest.swift in Sources */,
 				409DAF802A0BEE95004346EF /* SuccessDetails.swift in Sources */,
+				402A28342A1BE54F00A451F9 /* SDKError.swift in Sources */,
 				40EA003A2A0A809C00715BF0 /* BankTableViewCell.swift in Sources */,
 				404E27E82A0980EF009365CA /* String+Languages.swift in Sources */,
 				40E876392A03B0770013038E /* Environment.swift in Sources */,
