@@ -1,12 +1,9 @@
 import Foundation
 
-public enum GetivySDKRecoverableError: Error {
+public enum GetivySDKError: Error {
     case invalidListBanksListResponse
     case invalidSearchBanksListResponse
     case serverResponseWithNoData
-}
-
-public enum GetivySDKNonRecoverableError: Error {
     case invalidURL
     case invalidGetSessionDetailsResponse
     case couldNotConstructFullUrlForEnvironment

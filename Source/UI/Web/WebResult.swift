@@ -11,6 +11,7 @@ enum WebMessageSource: String, Decodable {
 enum WebMessageOutcome: String, Decodable {
     case success
     case error
+    case cancel
 }
 
 struct WebResult: Decodable {

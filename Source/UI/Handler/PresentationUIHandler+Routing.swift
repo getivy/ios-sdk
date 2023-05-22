@@ -22,7 +22,13 @@ extension PresentationUIHandler {
             print("Getivy: Error loading web view")
             return
         }
-        mainNavigationController.setViewControllers([webView], animated: animated)
+        
+        if self.bankId == nil {
+            mainNavigationController.pushViewController(webView, animated: true)
+        }
+        else {
+            mainNavigationController.setViewControllers([webView], animated: animated)
+        }
     }
 
     func presentLanguagesView(over view: UIView) {
@@ -43,7 +49,11 @@ extension PresentationUIHandler {
 
     func closeWithNonRecoverable(error: Error) {
         dismissUI()
-        config.onError(error)
+        let sdkError = error as? SDKErrorImpl ?? SDKErrorImpl(
+            code: SDKErrorCodes.flowCancelled.rawValue,
+            message: SDKErrorCodes.flowCancelled.message()
+        )
+        config.onError(sdkError)
     }
 
     func dismissUI() {
