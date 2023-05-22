@@ -73,18 +73,32 @@ class PresentationUIHandler: NSObject {
     }
 
     func handleWebResult(result: WebResult) {
-        dismissUI()
-
-        if result.value == .success {
+        switch result.value {
+        case .success:
             let details = SuccessDetails(referenceId: result.referenceId, dataSessionId: result.dataId)
             config.onSuccess(details)
-        } else {
+            dismissUI()
+        case .cancel:
+            guard bankId == nil else {
+                config.onError(
+                    SDKErrorImpl(
+                        code: SDKErrorCodes.flowCancelled.rawValue,
+                        message: SDKErrorCodes.flowCancelled.message()
+                    )
+                )
+                dismissUI()
+                return
+            }
+
+            goBack()
+        case .error:
             config.onError(
                 SDKErrorImpl(
                     code: SDKErrorCodes.paymentFailed.rawValue,
                     message: SDKErrorCodes.paymentFailed.message()
                 )
             )
+            dismissUI()
         }
     }
 }

@@ -22,7 +22,13 @@ extension PresentationUIHandler {
             print("Getivy: Error loading web view")
             return
         }
-        mainNavigationController.setViewControllers([webView], animated: animated)
+        
+        if self.bankId == nil {
+            mainNavigationController.pushViewController(webView, animated: true)
+        }
+        else {
+            mainNavigationController.setViewControllers([webView], animated: animated)
+        }
     }
 
     func presentLanguagesView(over view: UIView) {

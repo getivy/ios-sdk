@@ -29,12 +29,11 @@ public final class GetivySDK: NSObject {
         configuration: GetivyConfiguration,
         handlerResult: @escaping (UIHandler?, SDKError?) -> Void
     ) {
-        
         if let error = configuration.validate() {
             handlerResult(nil, error)
             configuration.onError(error)
         }
-        
+
         api.context.environment = configuration.environment
 
         let request = GetDataSessionRequest(id: configuration.dataSessionId)
@@ -58,10 +57,10 @@ public final class GetivySDK: NSObject {
             case let .failure(error):
                 DispatchQueue.main.async {
                     let sdkError = error as? SDKErrorImpl ??
-                    SDKErrorImpl(
-                        code: SDKErrorCodes.couldNotGetDataSession.rawValue,
-                        message: SDKErrorCodes.couldNotGetDataSession.message()
-                    )
+                        SDKErrorImpl(
+                            code: SDKErrorCodes.couldNotGetDataSession.rawValue,
+                            message: SDKErrorCodes.couldNotGetDataSession.message()
+                        )
                     handlerResult(nil, sdkError)
                     configuration.onError(sdkError)
                 }
