@@ -14,8 +14,8 @@ enum SDKErrorCodes: String { case
             return "Could not get data session."
         case .flowCancelled:
             return "Process was cancelled."
-        case .paymentFailed:
-            return "Payment not successful."
+        case .flowFailed:
+            return "Flow not successful."
         }
     }
 }
