@@ -51,7 +51,7 @@ class PresentationUIHandler: NSObject {
 
     @objc
     func didPressClose() {
-        closeWithNonRecoverable(error: GetivySDKError.flowNotSuccessful)
+        goBackOrClose()
     }
 
     @objc
@@ -79,18 +79,7 @@ class PresentationUIHandler: NSObject {
             config.onSuccess(details)
             dismissUI()
         case .cancel:
-            guard bankId == nil else {
-                config.onError(
-                    SDKErrorImpl(
-                        code: SDKErrorCodes.flowCancelled.rawValue,
-                        message: SDKErrorCodes.flowCancelled.message()
-                    )
-                )
-                dismissUI()
-                return
-            }
-
-            goBack()
+            goBackOrClose()
         case .error:
             config.onError(
                 SDKErrorImpl(
