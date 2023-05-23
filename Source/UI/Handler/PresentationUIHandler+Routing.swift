@@ -22,11 +22,10 @@ extension PresentationUIHandler {
             print("Getivy: Error loading web view")
             return
         }
-        
+
         if self.bankId == nil {
             mainNavigationController.pushViewController(webView, animated: true)
-        }
-        else {
+        } else {
             mainNavigationController.setViewControllers([webView], animated: animated)
         }
     }
@@ -62,5 +61,20 @@ extension PresentationUIHandler {
         } else {
             dismissalHandler?(mainNavigationController)
         }
+    }
+
+    func goBackOrClose() {
+        guard bankId == nil else {
+            config.onError(
+                SDKErrorImpl(
+                    code: SDKErrorCodes.flowCancelled.rawValue,
+                    message: SDKErrorCodes.flowCancelled.message()
+                )
+            )
+            dismissUI()
+            return
+        }
+
+        goBack()
     }
 }
