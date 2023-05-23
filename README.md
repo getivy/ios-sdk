@@ -1,6 +1,4 @@
-![GetivySDK: slogan goes here]
-
-1-2 sentence description what is GetivySDK?.
+#GetivySDK
 
 ## Contents
 
@@ -15,8 +13,8 @@
 
 ## Requirements (for latest release)
 
-* Xcode 13+
-* Swift 5.0+
+* Xcode 14+
+* Swift 5.7+
 
 ## Installation
 
