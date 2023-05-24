@@ -78,8 +78,8 @@ $ git submodule add https://github.com/getivy/ios-sdk.git
 
 ## Start flow
 
-### How to create a form
-By extending `FormViewController` you can then simply add sections and rows to the `form` variable.
+### How to start flow
+The following example show how to initialize the SDK and get a UI handler that you can use to start the flow of the SDK.
 
 ```swift
 import UIKit
