@@ -29,6 +29,8 @@ final class DataSessionApiService: ApiService, DataSessionService {
                 return
             }
 
+            print(String(decoding: data, as: UTF8.self))
+
             do {
                 let decodedResponse = try self.parser.parseDataSessionDetails(data: data)
                 DispatchQueue.main.async {

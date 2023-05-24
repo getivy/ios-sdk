@@ -27,6 +27,10 @@
 		405339C12A09372B000F4E3D /* UIFont + CustomFonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */; };
 		405339C32A0937AA000F4E3D /* GraphikRegular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 405339C22A0937AA000F4E3D /* GraphikRegular.otf */; };
 		40771D582A0D2F8300D9C1E2 /* WebResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40771D572A0D2F8200D9C1E2 /* WebResult.swift */; };
+		407F12522A1E19CF0042626A /* DataSessionServiceSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F124F2A1E19CF0042626A /* DataSessionServiceSpy.swift */; };
+		407F12542A1E19CF0042626A /* GetivySDKImplTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F12512A1E19CF0042626A /* GetivySDKImplTests.swift */; };
+		407F12572A1E2B700042626A /* GetivySDKImpl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F12552A1E1B7A0042626A /* GetivySDKImpl.swift */; };
+		407F12622A1E435E0042626A /* GetivySDKContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 407F12602A1E430B0042626A /* GetivySDKContract.swift */; };
 		4082F1E52A095CD30037F6B6 /* Inter-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */; };
 		4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */; };
 		4082F1E92A0965C70037F6B6 /* LanguagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */; };
@@ -103,6 +107,10 @@
 		405339C02A09372B000F4E3D /* UIFont + CustomFonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont + CustomFonts.swift"; sourceTree = "<group>"; };
 		405339C22A0937AA000F4E3D /* GraphikRegular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = GraphikRegular.otf; sourceTree = "<group>"; };
 		40771D572A0D2F8200D9C1E2 /* WebResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebResult.swift; sourceTree = "<group>"; };
+		407F124F2A1E19CF0042626A /* DataSessionServiceSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataSessionServiceSpy.swift; sourceTree = "<group>"; };
+		407F12512A1E19CF0042626A /* GetivySDKImplTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetivySDKImplTests.swift; sourceTree = "<group>"; };
+		407F12552A1E1B7A0042626A /* GetivySDKImpl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetivySDKImpl.swift; sourceTree = "<group>"; };
+		407F12602A1E430B0042626A /* GetivySDKContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetivySDKContract.swift; sourceTree = "<group>"; };
 		4082F1E42A095CD30037F6B6 /* Inter-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Inter-Regular.otf"; sourceTree = "<group>"; };
 		4082F1E62A095E130037F6B6 /* NSMuttableAttributedString+Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSMuttableAttributedString+Link.swift"; sourceTree = "<group>"; };
 		4082F1E82A0965C70037F6B6 /* LanguagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguagesViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +254,23 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		407F124B2A1E19AA0042626A /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				407F124E2A1E19CF0042626A /* GetivySDKImpl */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+		407F124E2A1E19CF0042626A /* GetivySDKImpl */ = {
+			isa = PBXGroup;
+			children = (
+				407F124F2A1E19CF0042626A /* DataSessionServiceSpy.swift */,
+				407F12512A1E19CF0042626A /* GetivySDKImplTests.swift */,
+			);
+			path = GetivySDKImpl;
+			sourceTree = "<group>";
+		};
 		4082F1EA2A0965FC0037F6B6 /* Languages */ = {
 			isa = PBXGroup;
 			children = (
@@ -256,19 +281,12 @@
 			path = Languages;
 			sourceTree = "<group>";
 		};
-		40B69DB22A025D5E00DA03F4 /* Tests */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Tests;
-			sourceTree = "<group>";
-		};
 		40D093CE2A01539800FBBB5A = {
 			isa = PBXGroup;
 			children = (
 				40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */,
 				40E8762A2A03B0770013038E /* Source */,
-				40B69DB22A025D5E00DA03F4 /* Tests */,
+				407F124B2A1E19AA0042626A /* Tests */,
 				40D093D92A01539800FBBB5A /* Products */,
 			);
 			sourceTree = "<group>";
@@ -294,6 +312,8 @@
 				40E876502A03B6250013038E /* Api */,
 				40E8762D2A03B0770013038E /* GetivySDK.h */,
 				40E8762E2A03B0770013038E /* GetivySDK.swift */,
+				407F12602A1E430B0042626A /* GetivySDKContract.swift */,
+				407F12552A1E1B7A0042626A /* GetivySDKImpl.swift */,
 				40E8762F2A03B0770013038E /* GetivySDKError.swift */,
 				405339BA2A093252000F4E3D /* Assets.xcassets */,
 			);
@@ -606,6 +626,7 @@
 				404E27ED2A0989D7009365CA /* BanksApiRoute.swift in Sources */,
 				404E27F72A098B01009365CA /* ListBanksResponse.swift in Sources */,
 				40C4B3E32A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift in Sources */,
+				407F12572A1E2B700042626A /* GetivySDKImpl.swift in Sources */,
 				40E8763C2A03B0770013038E /* GetivySDKError.swift in Sources */,
 				40E8765C2A03CB450013038E /* DataSessionService.swift in Sources */,
 				40EA00342A0A64B300715BF0 /* SearchBanksRequest.swift in Sources */,
@@ -615,6 +636,7 @@
 				404E27FD2A09985D009365CA /* UIImageView+URL.swift in Sources */,
 				402A28362A1BE54F00A451F9 /* SDKErrorImpl.swift in Sources */,
 				40771D582A0D2F8300D9C1E2 /* WebResult.swift in Sources */,
+				407F12622A1E435E0042626A /* GetivySDKContract.swift in Sources */,
 				404E27F12A098A98009365CA /* BanksService.swift in Sources */,
 				40E8764D2A03B3480013038E /* APIRoute.swift in Sources */,
 				4082F1E72A095E130037F6B6 /* NSMuttableAttributedString+Link.swift in Sources */,
@@ -646,6 +668,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				407F12542A1E19CF0042626A /* GetivySDKImplTests.swift in Sources */,
+				407F12522A1E19CF0042626A /* DataSessionServiceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
