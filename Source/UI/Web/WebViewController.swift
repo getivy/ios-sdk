@@ -24,7 +24,7 @@ class WebViewController: UIViewController {
         let webApiRoute = WebViewApiRoute.load(
             dataSessionId: router.config.dataSessionId,
             bankId: bankId,
-            locale: getLocale() ?? Languages.english.rawValue
+            locale: router.localizationManager.getLocaleCode()
         )
         guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
             return

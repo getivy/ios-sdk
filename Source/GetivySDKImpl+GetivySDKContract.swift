@@ -1,0 +1,45 @@
+import Foundation
+
+extension GetivySDKImpl: GetivySDKContract {
+    func initializeHandler(
+        configuration: GetivyConfiguration,
+        handlerResult: @escaping HandlerCompletion
+    ) {
+        if let error = configuration.validate() {
+            handlerResult(nil, error)
+            configuration.onError(error)
+        }
+
+        api.context.environment = configuration.environment
+
+        let request = GetDataSessionRequest(id: configuration.dataSessionId)
+        api.retrieveDataSession(
+            route: DataSessionApiRoute.retrieve,
+            params: request
+        ) { result in
+            switch result {
+            case let .success(result):
+
+                let uiHandler = PresentationUIHandler(
+                    config: configuration,
+                    bankId: result.prefill.bankId,
+                    market: result.market,
+                    locale: result.locale
+                )
+                DispatchQueue.main.async {
+                    handlerResult(uiHandler, nil)
+                }
+            case let .failure(error):
+                DispatchQueue.main.async {
+                    let sdkError = error as? SDKErrorImpl ??
+                        SDKErrorImpl(
+                            code: SDKErrorCodes.couldNotGetDataSession.rawValue,
+                            message: SDKErrorCodes.couldNotGetDataSession.message()
+                        )
+                    handlerResult(nil, sdkError)
+                    configuration.onError(sdkError)
+                }
+            }
+        }
+    }
+}
