@@ -30,12 +30,13 @@ extension GetivySDKImpl: GetivySDKContract {
                     handlerResult(uiHandler, nil)
                 }
             case let .failure(error):
+
+                let sdkError = error as? SDKErrorImpl ??
+                    SDKErrorImpl(
+                        code: SDKErrorCodes.couldNotGetDataSession.rawValue,
+                        message: SDKErrorCodes.couldNotGetDataSession.message()
+                    )
                 DispatchQueue.main.async {
-                    let sdkError = error as? SDKErrorImpl ??
-                        SDKErrorImpl(
-                            code: SDKErrorCodes.couldNotGetDataSession.rawValue,
-                            message: SDKErrorCodes.couldNotGetDataSession.message()
-                        )
                     handlerResult(nil, sdkError)
                     configuration.onError(sdkError)
                 }

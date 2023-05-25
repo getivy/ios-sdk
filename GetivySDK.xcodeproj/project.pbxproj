@@ -50,6 +50,7 @@
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
 		40C4B3E32A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */; };
 		40D093E32A01539800FBBB5A /* GetivySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 40D093D82A01539800FBBB5A /* GetivySDK.framework */; };
+		40E4E8392A1F4FD500383EA7 /* GetivyConfigurationSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E4E8382A1F4FD500383EA7 /* GetivyConfigurationSpy.swift */; };
 		40E876382A03B0770013038E /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762B2A03B0770013038E /* APIService.swift */; };
 		40E876392A03B0770013038E /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40E8762C2A03B0770013038E /* Environment.swift */; };
 		40E8763A2A03B0770013038E /* GetivySDK.h in Headers */ = {isa = PBXBuildFile; fileRef = 40E8762D2A03B0770013038E /* GetivySDK.h */; };
@@ -138,6 +139,7 @@
 		40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
 		40D093D82A01539800FBBB5A /* GetivySDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GetivySDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		40D093E22A01539800FBBB5A /* GetivySDKTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GetivySDKTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		40E4E8382A1F4FD500383EA7 /* GetivyConfigurationSpy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetivyConfigurationSpy.swift; sourceTree = "<group>"; };
 		40E8762B2A03B0770013038E /* APIService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
 		40E8762C2A03B0770013038E /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		40E8762D2A03B0770013038E /* GetivySDK.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GetivySDK.h; sourceTree = "<group>"; };
@@ -282,6 +284,7 @@
 			children = (
 				407F124F2A1E19CF0042626A /* DataSessionServiceSpy.swift */,
 				407F12512A1E19CF0042626A /* GetivySDKImplTests.swift */,
+				40E4E8382A1F4FD500383EA7 /* GetivyConfigurationSpy.swift */,
 			);
 			path = GetivySDKImpl;
 			sourceTree = "<group>";
@@ -713,6 +716,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				407F12542A1E19CF0042626A /* GetivySDKImplTests.swift in Sources */,
+				40E4E8392A1F4FD500383EA7 /* GetivyConfigurationSpy.swift in Sources */,
 				407F12522A1E19CF0042626A /* DataSessionServiceSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
