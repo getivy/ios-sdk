@@ -37,7 +37,7 @@ class WebViewController: UIViewController {
         webView.load(request)
 
         // Needed for web view to be inspectable in debug
-        #if DEBUG
+        #if DEBUG && swift(>=5.8)
         if #available(iOS 16.4, *) {
             webView.isInspectable = true
         }
