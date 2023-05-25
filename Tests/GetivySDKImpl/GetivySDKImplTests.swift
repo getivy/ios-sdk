@@ -176,7 +176,7 @@ class GetivySDKImplTests: XCTestCase {
         let expectation = expectation(description: "Handler returned successfully2")
 
         // When
-        var isMainThread = true
+        var isMainThread = false
         sdk.initializeHandler(configuration: config) { handler, error in
             isMainThread = Thread.isMainThread
             expectation.fulfill()
@@ -259,5 +259,40 @@ class GetivySDKImplTests: XCTestCase {
         XCTAssertEqual(onError?.message, SDKErrorCodes.missingDataSessionId.message())
         XCTAssertEqual(sdkError?.code, SDKErrorCodes.missingDataSessionId.rawValue)
         XCTAssertEqual(sdkError?.message, SDKErrorCodes.missingDataSessionId.message())
+    }
+
+    func test_givenSDK_whenDataSessionFails_thenOnErrorShouldBeCalledOnMainThread() {
+        // Given
+        let api = DataSessionServiceSpy(
+            context: NonPersistentApiContext(environment: .sandbox),
+            session: URLSession.shared
+        )
+
+        let error = SDKErrorImpl(code: SDKErrorCodes.missingDataSessionId.rawValue, message: SDKErrorCodes.missingDataSessionId.message())
+
+        api.stubbedRetrieveDataSessionCompletionResult = (.failure(error), ())
+        let sdk = GetivySDKImpl(api: api)
+
+        let config = GetivyConfigurationSpy(dataSessionId: "dataSessionId") { result in } onError: { error in
+        }
+        var isMainThreadOnError = false
+        config.stubbedOnError = { error in
+            isMainThreadOnError = Thread.isMainThread
+        }
+
+        let expectation = expectation(description: "failed to get handler 2")
+
+        // When
+        var isMainThreadCompletion = false
+        sdk.initializeHandler(configuration: config) { handler, error in
+            isMainThreadCompletion = Thread.isMainThread
+            expectation.fulfill()
+        }
+
+        // Then
+        wait(for: [expectation], timeout: 1)
+
+        XCTAssertTrue(isMainThreadCompletion)
+        XCTAssertTrue(isMainThreadOnError)
     }
 }
