@@ -3,6 +3,7 @@ import PackageDescription
 
 let package = Package(
     name: "GetivySDK",
+    defaultLocalization: "en",
     platforms: [.iOS(.v11)],
     products: [
         .library(name: "GetivySDK", targets: ["GetivySDK"]),
