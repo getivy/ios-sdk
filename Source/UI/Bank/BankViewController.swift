@@ -21,12 +21,6 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet var searchBar: UISearchBar!
     @IBOutlet var languageButton: UIButton!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        router.closeButton.isHidden = true
-    }
-
     override func viewDidLoad() {
         super.viewDidLoad()
 

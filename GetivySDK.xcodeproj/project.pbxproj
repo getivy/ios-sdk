@@ -45,7 +45,7 @@
 		40B2686D2A1E7914000B404F /* LocalizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B2686C2A1E7914000B404F /* LocalizationManager.swift */; };
 		40B2686F2A1E797B000B404F /* LanguageChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B2686E2A1E797B000B404F /* LanguageChangeObserver.swift */; };
 		40B268712A1E79EE000B404F /* LocalizationManager+LocalizationManagerContract.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B268702A1E79EE000B404F /* LocalizationManager+LocalizationManagerContract.swift */; };
-		40B268752A1E83F7000B404F /* PresentationUIHandler+LanguageChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B268722A1E8208000B404F /* PresentationUIHandler+LanguageChangeObserver.swift */; };
+		40B268752A1E83F7000B404F /* WebViewController+LanguageChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B268722A1E8208000B404F /* WebViewController+LanguageChangeObserver.swift */; };
 		40B268772A1E8431000B404F /* BankViewController+LanguageChangeObserver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40B268762A1E8431000B404F /* BankViewController+LanguageChangeObserver.swift */; };
 		40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */ = {isa = PBXBuildFile; fileRef = 40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */; };
 		40C4B3E32A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */; };
@@ -133,7 +133,7 @@
 		40B2686C2A1E7914000B404F /* LocalizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationManager.swift; sourceTree = "<group>"; };
 		40B2686E2A1E797B000B404F /* LanguageChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LanguageChangeObserver.swift; sourceTree = "<group>"; };
 		40B268702A1E79EE000B404F /* LocalizationManager+LocalizationManagerContract.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LocalizationManager+LocalizationManagerContract.swift"; sourceTree = "<group>"; };
-		40B268722A1E8208000B404F /* PresentationUIHandler+LanguageChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PresentationUIHandler+LanguageChangeObserver.swift"; sourceTree = "<group>"; };
+		40B268722A1E8208000B404F /* WebViewController+LanguageChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+LanguageChangeObserver.swift"; sourceTree = "<group>"; };
 		40B268762A1E8431000B404F /* BankViewController+LanguageChangeObserver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BankViewController+LanguageChangeObserver.swift"; sourceTree = "<group>"; };
 		40B69DAB2A025D1C00DA03F4 /* GetivySDK.docc */ = {isa = PBXFileReference; lastKnownFileType = folder.documentationcatalog; path = GetivySDK.docc; sourceTree = "<group>"; };
 		40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WebViewController+WKScriptMessageHandler.swift"; sourceTree = "<group>"; };
@@ -314,7 +314,6 @@
 			isa = PBXGroup;
 			children = (
 				40E876352A03B0770013038E /* PresentationUIHandler.swift */,
-				40B268722A1E8208000B404F /* PresentationUIHandler+LanguageChangeObserver.swift */,
 				40F64E552A0551F2006A6DAC /* PresentationUIHandler+UIHandler.swift */,
 				40F64E532A0551BA006A6DAC /* PresentationUIHandler+Routing.swift */,
 				40F64E572A05524B006A6DAC /* PresentationUIHandler+Build.swift */,
@@ -471,6 +470,7 @@
 				40771D572A0D2F8200D9C1E2 /* WebResult.swift */,
 				40F64E512A054E92006A6DAC /* WebViewController.swift */,
 				40EA003D2A0A887C00715BF0 /* WebView.storyboard */,
+				40B268722A1E8208000B404F /* WebViewController+LanguageChangeObserver.swift */,
 				40C4B3E22A13752300BECD09 /* WebViewController+WKScriptMessageHandler.swift */,
 				40857EFB2A14F7CF006BCF67 /* WebViewController+WKNavigationDelegate.swift */,
 				40857EFC2A14F7CF006BCF67 /* WebViewController+WKUIDelegate.swift */,
@@ -701,7 +701,7 @@
 				40B268712A1E79EE000B404F /* LocalizationManager+LocalizationManagerContract.swift in Sources */,
 				402A28342A1BE54F00A451F9 /* SDKError.swift in Sources */,
 				40EA003A2A0A809C00715BF0 /* BankTableViewCell.swift in Sources */,
-				40B268752A1E83F7000B404F /* PresentationUIHandler+LanguageChangeObserver.swift in Sources */,
+				40B268752A1E83F7000B404F /* WebViewController+LanguageChangeObserver.swift in Sources */,
 				404E27E82A0980EF009365CA /* String+Languages.swift in Sources */,
 				40E876392A03B0770013038E /* Environment.swift in Sources */,
 				40B69DAC2A025D1C00DA03F4 /* GetivySDK.docc in Sources */,

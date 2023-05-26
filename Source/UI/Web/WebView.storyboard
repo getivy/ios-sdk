@@ -18,24 +18,35 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xwi-rJ-gmf">
-                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <rect key="frame" x="0.0" y="110" width="393" height="708"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hf7-s5-XLb">
+                                <rect key="frame" x="302" y="67" width="75" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Button"/>
+                                <connections>
+                                    <action selector="didPressClose" destination="Y6W-OH-hqX" eventType="touchUpInside" id="4Li-SJ-faF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="xwi-rJ-gmf" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" id="8iC-jc-XrX"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="xwi-rJ-gmf" secondAttribute="trailing" id="BTV-PT-mA3"/>
+                            <constraint firstItem="xwi-rJ-gmf" firstAttribute="top" secondItem="hf7-s5-XLb" secondAttribute="bottom" constant="8" id="CaU-5V-5qg"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="xwi-rJ-gmf" secondAttribute="bottom" id="box-H7-TeQ"/>
-                            <constraint firstItem="xwi-rJ-gmf" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" id="uB2-Yt-0hb"/>
+                            <constraint firstItem="hf7-s5-XLb" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="8" id="g5t-kM-3lK"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="hf7-s5-XLb" secondAttribute="trailing" constant="16" id="gtA-h8-K5J"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="closeButton" destination="hf7-s5-XLb" id="gux-tf-GSt"/>
                         <outlet property="webView" destination="xwi-rJ-gmf" id="TTY-L6-GBQ"/>
                     </connections>
                 </viewController>
