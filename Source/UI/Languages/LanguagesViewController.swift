@@ -4,6 +4,10 @@ enum Languages: String { case
     english = "en",
     german = "de",
     dutch = "nl"
+
+    static func `default`() -> Languages {
+        return .english
+    }
 }
 
 class LanguagesViewController: UIViewController {
@@ -12,6 +16,8 @@ class LanguagesViewController: UIViewController {
         dutch,
         english
     }
+
+    var router: PresentationUIHandler!
 
     @IBOutlet var dutchLabel: UILabel!
     @IBOutlet var englishLabel: UILabel!
@@ -53,11 +59,11 @@ class LanguagesViewController: UIViewController {
 
         switch viewTag {
         case ViewPressed.german:
-            setLocale(code: Languages.german.rawValue)
+            router.localizationManager.setLocale(code: Languages.german.rawValue)
         case ViewPressed.english:
-            setLocale(code: Languages.english.rawValue)
+            router.localizationManager.setLocale(code: Languages.english.rawValue)
         case ViewPressed.dutch:
-            setLocale(code: Languages.dutch.rawValue)
+            router.localizationManager.setLocale(code: Languages.dutch.rawValue)
         }
 
         dismiss(animated: true)

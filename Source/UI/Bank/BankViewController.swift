@@ -30,7 +30,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
+        router.localizationManager.addObserver(observer: self)
 
         setupView()
 
@@ -41,6 +41,10 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
         } else {
             sendSearchRequest()
         }
+    }
+
+    deinit {
+        router.localizationManager.removeObserver(observer: self)
     }
 
     func sendSearchRequest() {
@@ -144,7 +148,7 @@ class BankViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     @objc
     func languageChanged() {
-        let language = Languages(rawValue: getLocale() ?? Languages.english.rawValue) ?? .english
+        let language = Languages(rawValue: router.localizationManager.getLocaleCode()) ?? Languages.default()
 
         let bundle = Bundle(for: LanguagesViewController.self)
 

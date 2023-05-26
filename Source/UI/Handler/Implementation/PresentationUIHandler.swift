@@ -16,21 +16,27 @@ class PresentationUIHandler: NSObject {
 
     let closeButton: UIButton
 
+    let localizationManager: LocalizationManagerContract
+
     var dismissalHandler: DismissalClosure?
 
-    init(config: GetivyConfiguration, bankId: String?, market: String) {
+    init(config: GetivyConfiguration, bankId: String?, market: String, locale: String?) {
         self.bankId = bankId
         self.config = config
         self.market = market
+        localizationManager = LocalizationManager(userDefaults: UserDefaults.standard, initialLocale: locale)
         closeButton = UIButton(type: .custom)
 
         super.init()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
-
+        localizationManager.addObserver(observer: self)
         setupView()
-        languageChanged()
+        didChangeLanguage(code: localizationManager.getLocaleCode())
         startFlow()
+    }
+
+    deinit {
+        localizationManager.removeObserver(observer: self)
     }
 
     func setupView() {
@@ -52,13 +58,6 @@ class PresentationUIHandler: NSObject {
     @objc
     func didPressClose() {
         goBackOrClose()
-    }
-
-    @objc
-    func languageChanged() {
-        let language = Languages(rawValue: getLocale() ?? Languages.english.rawValue) ?? .english
-        let closeTitle = "cancel".localized(language: language)
-        closeButton.setTitle(closeTitle, for: .normal)
     }
 
     func startFlow() {
