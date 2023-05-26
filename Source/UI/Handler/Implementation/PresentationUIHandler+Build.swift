@@ -37,6 +37,8 @@ extension PresentationUIHandler {
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "LanguagesViewController") as? LanguagesViewController else {
             throw GetivySDKError.couldNotLoadViewFromStoryboard
         }
+        
+        viewController.router = self
 
         return viewController
     }

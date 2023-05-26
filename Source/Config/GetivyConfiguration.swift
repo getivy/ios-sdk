@@ -25,6 +25,8 @@ class GetivyConfiguration: NSObject {
         self.environment = environment
         self.onSuccess = onSuccess
         self.onError = onError
+
+        super.init()
     }
 
     func validate() -> SDKErrorImpl? {

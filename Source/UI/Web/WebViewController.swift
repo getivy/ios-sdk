@@ -2,6 +2,7 @@ import UIKit
 import WebKit
 
 class WebViewController: UIViewController {
+    @IBOutlet var closeButton: UIButton!
     @IBOutlet var webView: WKWebView!
 
     private let decoder = JSONDecoder()
@@ -9,14 +10,15 @@ class WebViewController: UIViewController {
     var bankId: String!
     var router: PresentationUIHandler!
 
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-
-        router.closeButton.isHidden = false
+    deinit {
+        router.localizationManager.removeObserver(observer: self)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        router.localizationManager.addObserver(observer: self)
+        didChangeLanguage(code: router.localizationManager.getLocaleCode())
 
         let contentController = webView.configuration.userContentController
         contentController.add(self, name: "nativeMessageListener")
@@ -24,7 +26,7 @@ class WebViewController: UIViewController {
         let webApiRoute = WebViewApiRoute.load(
             dataSessionId: router.config.dataSessionId,
             bankId: bankId,
-            locale: getLocale() ?? Languages.english.rawValue
+            locale: router.localizationManager.getLocaleCode()
         )
         guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
             return
@@ -36,11 +38,17 @@ class WebViewController: UIViewController {
         let request = URLRequest(url: url)
         webView.load(request)
 
+        closeButton.setTitleColor(.black, for: .normal)
+
         // Needed for web view to be inspectable in debug
         #if DEBUG && swift(>=5.8)
         if #available(iOS 16.4, *) {
             webView.isInspectable = true
         }
         #endif
+    }
+
+    @IBAction func didPressClose() {
+        router.goBackOrClose()
     }
 }

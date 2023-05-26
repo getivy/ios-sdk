@@ -14,51 +14,24 @@ class PresentationUIHandler: NSObject {
 
     let config: GetivyConfiguration
 
-    let closeButton: UIButton
+    let localizationManager: LocalizationManagerContract
 
     var dismissalHandler: DismissalClosure?
 
-    init(config: GetivyConfiguration, bankId: String?, market: String) {
+    init(config: GetivyConfiguration, bankId: String?, market: String, locale: String?) {
         self.bankId = bankId
         self.config = config
         self.market = market
-        closeButton = UIButton(type: .custom)
+        localizationManager = LocalizationManager(userDefaults: UserDefaults.standard, initialLocale: locale)
 
         super.init()
 
-        NotificationCenter.default.addObserver(self, selector: #selector(languageChanged), name: languageChangedNotification, object: nil)
-
         setupView()
-        languageChanged()
         startFlow()
     }
 
     func setupView() {
         mainNavigationController.setNavigationBarHidden(true, animated: false)
-        mainNavigationController.view.addSubview(closeButton)
-        closeButton.translatesAutoresizingMaskIntoConstraints = false
-        closeButton.addTarget(self, action: #selector(didPressClose), for: .touchUpInside)
-        closeButton.setTitleColor(.black, for: .normal)
-
-        let margin: CGFloat = 16
-        closeButton.isHidden = true
-
-        NSLayoutConstraint.activate([
-            closeButton.topAnchor.constraint(equalTo: mainNavigationController.view.safeAreaLayoutGuide.topAnchor, constant: margin),
-            closeButton.trailingAnchor.constraint(equalTo: mainNavigationController.view.trailingAnchor, constant: -margin),
-        ])
-    }
-
-    @objc
-    func didPressClose() {
-        goBackOrClose()
-    }
-
-    @objc
-    func languageChanged() {
-        let language = Languages(rawValue: getLocale() ?? Languages.english.rawValue) ?? .english
-        let closeTitle = "cancel".localized(language: language)
-        closeButton.setTitle(closeTitle, for: .normal)
     }
 
     func startFlow() {
