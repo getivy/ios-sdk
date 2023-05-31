@@ -5,7 +5,7 @@ on: workflow_dispatch
 jobs:
   manual-approval:
     name: Manual approval of deployment to cocoapods
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Manual approval of deployment to cocoapods
         uses: trstringer/manual-approval@v1
