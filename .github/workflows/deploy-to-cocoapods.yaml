@@ -1,0 +1,64 @@
+name: Deploy_to_cocoapods
+
+on: workflow_dispatch
+
+jobs:
+  manual-approval:
+    name: Manual approval of deployment to cocoapods
+    runs-on: ubuntu-latest
+    steps:
+      - name: Manual approval of deployment to cocoapods
+        uses: trstringer/manual-approval@v1
+        timeout-minutes: 10
+        with:
+          approvers: poorniy,simontjw,joshaal,mariuskurgonasativy
+          minimum-approvals: 1
+          issue-title: 'Deploying to production cocoapods.org'
+          issue-body: 'Please approve or deny the cocoapods.org deployment'
+          exclude-workflow-initiator-as-approver: false
+          additional-approved-words: ''
+          additional-denied-words: ''
+
+  cancel-runs:
+    name: Cancel Previous Runs
+    runs-on: macos-latest
+    steps:
+      - name: Cancel Previous Runs
+        uses: styfle/cancel-workflow-action@0.11.0
+
+  CI:
+    uses: ./.github/workflows/_ci.yaml
+
+  tag-commit:
+    name: Tag Commit
+    needs: [CI, manual-approval]
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Dot Env
+        id: dotenv
+        uses: falti/dotenv-action@v1.0.4
+      - name: Tag Commit
+        run: |
+          TAG="${{ steps.dotenv.outputs.version }}"
+          git tag $TAG
+          git push origin $TAG
+
+  deploy-to-cocoapods:
+    name: Deploy To Cocoapods
+    needs: [tag-commit, CI, manual-approval]
+    runs-on: macOS-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: maxim-lobanov/setup-xcode@v1
+        with:
+          xcode-version: '14.2'
+      - name: Install Gems
+        run: bundle install
+      - name: Deploy to Cocoapods
+        run: |
+          set -eo pipefail
+          pod lib lint --allow-warnings
+          pod trunk push --allow-warnings
+        env:
+          COCOAPODS_TRUNK_TOKEN: ${{ secrets.COCOAPODS_TRUNK_TOKEN }}
