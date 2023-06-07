@@ -7,7 +7,7 @@ public typealias ErrorCallback = (_ error: SDKError?) -> Void
 @objcMembers
 public
 class GetivyConfiguration: NSObject {
-    public let environment: Environment
+    public let environment: String
 
     public let dataSessionId: String
 
@@ -17,7 +17,7 @@ class GetivyConfiguration: NSObject {
 
     public init(
         dataSessionId: String,
-        environment: Environment = .production,
+        environment: String,
         onSuccess: @escaping SuccessCallback,
         onError: @escaping ErrorCallback
     ) {
@@ -29,11 +29,31 @@ class GetivyConfiguration: NSObject {
         super.init()
     }
 
+    public init(
+        dataSessionId: String,
+        onSuccess: @escaping SuccessCallback,
+        onError: @escaping ErrorCallback
+    ) {
+        self.dataSessionId = dataSessionId
+        environment = Environment.production.rawValue
+        self.onSuccess = onSuccess
+        self.onError = onError
+
+        super.init()
+    }
+
     func validate() -> SDKErrorImpl? {
         if dataSessionId.isEmpty {
             return SDKErrorImpl(
                 code: SDKErrorCodes.missingDataSessionId.rawValue,
                 message: SDKErrorCodes.missingDataSessionId.message()
+            )
+        }
+
+        if !Environment.allCases.map(\.rawValue).contains(environment) {
+            return SDKErrorImpl(
+                code: SDKErrorCodes.wrongEnvironment.rawValue,
+                message: SDKErrorCodes.wrongEnvironment.message()
             )
         }
 

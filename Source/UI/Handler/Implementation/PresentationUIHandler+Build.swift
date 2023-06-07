@@ -8,8 +8,15 @@ extension PresentationUIHandler {
             throw GetivySDKError.couldNotLoadViewFromStoryboard
         }
 
+        guard let environment = Environment(rawValue: config.environment) else {
+            throw SDKErrorImpl(
+                code: SDKErrorCodes.wrongEnvironment.rawValue,
+                message: SDKErrorCodes.wrongEnvironment.message()
+            )
+        }
+
         viewController.banksService = BanksApiService(
-            context: NonPersistentApiContext(environment: config.environment),
+            context: NonPersistentApiContext(environment: environment),
             session: URLSession.shared,
             parser: BanksResponseParser()
         )
@@ -37,7 +44,7 @@ extension PresentationUIHandler {
         guard let viewController = storyboard.instantiateViewController(withIdentifier: "LanguagesViewController") as? LanguagesViewController else {
             throw GetivySDKError.couldNotLoadViewFromStoryboard
         }
-        
+
         viewController.router = self
 
         return viewController
