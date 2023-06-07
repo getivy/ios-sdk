@@ -6,7 +6,9 @@ extension GetivySDKImpl: GetivySDKContract {
         handlerResult: @escaping HandlerCompletion
     ) {
         if let error = configuration.validate() {
-            handlerResult(nil, error)
+            DispatchQueue.main.async {
+                handlerResult(nil, error)
+            }
             configuration.onError(error)
             return
         }

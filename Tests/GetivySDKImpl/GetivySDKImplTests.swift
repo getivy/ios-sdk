@@ -45,6 +45,7 @@ class GetivySDKImplTests: XCTestCase {
         var reportedOnError: SDKError?
         let config = GetivyConfigurationSpy(dataSessionId: "") { result in } onError: { error in }
         let error = SDKErrorImpl(code: SDKErrorCodes.flowCancelled.rawValue, message: "Message")
+        let expectation = expectation(description: "error")
         config.stubbedValidateResult = error
         config.stubbedOnError = { error in
             reportedOnError = error
@@ -53,7 +54,10 @@ class GetivySDKImplTests: XCTestCase {
         // When
         sdk.initializeHandler(configuration: config) { handler, error in
             reportedHandlerError = error
+            expectation.fulfill()
         }
+
+        wait(for: [expectation], timeout: 1)
 
         // Then
         XCTAssertEqual(error.code, reportedOnError?.code)
@@ -69,13 +73,51 @@ class GetivySDKImplTests: XCTestCase {
             session: URLSession.shared
         )
         let sdk = GetivySDKImpl(api: api)
-        let config = GetivyConfigurationSpy(dataSessionId: "", environment: .production) { result in } onError: { error in }
+        let config = GetivyConfigurationSpy(dataSessionId: "", environment: Environment.production.rawValue) { result in } onError: { error in }
         // When
         sdk.initializeHandler(configuration: config) { handler, error in
         }
 
         // Then
         XCTAssertEqual(api.context.environment, .production)
+    }
+
+    func test_givenSDK_whenEnvironmentIsWrong_thenErrorShouldBeReported() {
+        // Given
+        let api = DataSessionServiceSpy(
+            context: NonPersistentApiContext(environment: .sandbox),
+            session: URLSession.shared
+        )
+
+        var onError: SDKError?
+        var handlerError: SDKError?
+        let expectation = expectation(description: "failed to get handler11")
+
+        let sdk = GetivySDKImpl(api: api)
+        let config = GetivyConfigurationSpy(dataSessionId: "", environment: "environment") { result in } onError: { error in onError = error }
+        config.stubbedOnError = { error in
+            onError = error
+        }
+
+        config.stubbedValidateResult = SDKErrorImpl(
+            code: SDKErrorCodes.wrongEnvironment.rawValue,
+            message: SDKErrorCodes.wrongEnvironment.message()
+        )
+        // When
+        sdk.initializeHandler(configuration: config) { handler, error in
+            handlerError = error
+            expectation.fulfill()
+        }
+
+        wait(for: [expectation], timeout: 1)
+
+        // Then
+        XCTAssertNotNil(onError)
+        XCTAssertNotNil(handlerError)
+        XCTAssertEqual(onError?.code, Optional(SDKErrorCodes.wrongEnvironment.rawValue))
+        XCTAssertEqual(onError?.message, Optional(SDKErrorCodes.wrongEnvironment.message()))
+        XCTAssertEqual(handlerError?.code, Optional(SDKErrorCodes.wrongEnvironment.rawValue))
+        XCTAssertEqual(handlerError?.message, Optional(SDKErrorCodes.wrongEnvironment.message()))
     }
 
     func test_givenSDK_whenDataSessionSucceeds_thenHandlerShouldBeReturned() {
