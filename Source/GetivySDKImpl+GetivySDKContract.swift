@@ -6,11 +6,18 @@ extension GetivySDKImpl: GetivySDKContract {
         handlerResult: @escaping HandlerCompletion
     ) {
         if let error = configuration.validate() {
-            handlerResult(nil, error)
+            DispatchQueue.main.async {
+                handlerResult(nil, error)
+            }
             configuration.onError(error)
+            return
         }
 
-        api.context.environment = configuration.environment
+        guard let environment = Environment(rawValue: configuration.environment) else {
+            return // Should have been already checked in the previous validate call
+        }
+
+        api.context.environment = environment
 
         let request = GetDataSessionRequest(id: configuration.dataSessionId)
         api.retrieveDataSession(

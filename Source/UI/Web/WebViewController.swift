@@ -28,7 +28,13 @@ class WebViewController: UIViewController {
             bankId: bankId,
             locale: router.localizationManager.getLocaleCode()
         )
-        guard let url = webApiRoute.paymentUrl(for: router.config.environment) else {
+
+        guard let environment = Environment(rawValue: router.config.environment) else {
+            assertionFailure() // Should never happen
+            return
+        }
+
+        guard let url = webApiRoute.paymentUrl(for: environment) else {
             return
         }
 

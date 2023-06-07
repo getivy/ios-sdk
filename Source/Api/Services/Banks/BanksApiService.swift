@@ -59,8 +59,6 @@ final class BanksApiService: ApiService, BanksService {
                 return
             }
 
-            print(String(decoding: data, as: UTF8.self))
-
             do {
                 let decodedResponse = try self.parser.parseSearchResponse(data: data)
                 DispatchQueue.main.async {
